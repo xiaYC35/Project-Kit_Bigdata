@@ -30,7 +30,9 @@ Pour installer cette bibliothèque, suivez ces étapes :
 
 1. Clonez le dépôt depuis GitHub.
 2. Naviguez vers le répertoire du projet : cd nom-du-repertoire-du-projet
-3. Installez les dépendances en exécutant la commande suivante : pip install -r requirements.txt
+3. Créez un environnement virtuel avec la commande : python3 -m venv venv
+4. Activez votre environnement avec la commande : source venv/bin/activate
+5. Installez les dépendances en exécutant la commande suivante : pip install -r requirements.txt
 
 
 ## Utilisation
