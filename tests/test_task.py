@@ -20,7 +20,8 @@ class TestCodeUnderTest:
     # print a task's string representation
     def test_print_task_string_representation(self):
         task = Task("Task 1", "Description 1")
-        expected_output = "ID : 0\nTâche : Task 1\nDescription : Description 1\nStatut : Non terminée\nDate de création : " + str(task.created_date) + "\n"
+        id = task.id
+        expected_output = "ID : " + str(id) + "\nTâche : Task 1\nDescription : Description 1\nStatut : Non terminée\nDate de création : " + str(task.created_date) + "\n"
         assert str(task) == expected_output
 
     # create multiple tasks and check if their IDs are unique
