@@ -1,4 +1,4 @@
-from tasklist import TaskList
+from .tasklist import TaskList
 
 def display_menu():
     print("\nMenu :")
