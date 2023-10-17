@@ -1,4 +1,7 @@
 from datetime import datetime
+import logging
+debug_logger = logging.getLogger("debug_logger")
+error_logger = logging.getLogger("error_logger")
 
 class Task:
     _id_counter = 0
@@ -16,8 +19,10 @@ class Task:
         """
 
         if not name:
+            logging.error("Le nom doit être fourni pour une tâche.")
             raise ValueError("Name must be provided for a Task.")
         if not description:
+            logging.error("La description doit être fournie pour une tâche.")
             raise ValueError("Description must be provided for a Task.")
     
         self.id = Task._id_counter
@@ -26,12 +31,16 @@ class Task:
         self.description = description
         self.completed = False
         self.created_date = datetime.now()
+        debug_logger.debug(f"Création d'une nouvelle tâche : {name}")
+
 
     def mark_completed(self):
         """
         Marks the task as completed by setting the completion status to True.
         """
         self.completed = True
+        debug_logger.debug(f"La tâche '{self.name}' a été marquée comme terminée.")
+
 
     def __str__(self):
         """
