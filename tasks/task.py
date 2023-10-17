@@ -10,7 +10,16 @@ class Task:
         Args:
             name (str): The name of the task.
             description (str): The description of the task.
+        
+        Raises:
+            ValueError: If the name or description is not provided.
         """
+
+        if not name:
+            raise ValueError("Name must be provided for a Task.")
+        if not description:
+            raise ValueError("Description must be provided for a Task.")
+    
         self.id = Task._id_counter
         Task._id_counter += 1
         self.name = name
