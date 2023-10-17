@@ -1,4 +1,7 @@
 from .task import Task
+import logging
+debug_logger = logging.getLogger("debug_logger")
+error_logger = logging.getLogger("error_logger")
 
 class TaskList:
     """
@@ -19,6 +22,7 @@ class TaskList:
     def __init__(self):
         self.tasks = []
         self.archived_tasks = []
+        debug_logger.debug("Nouvelle liste de tâches créée.")
 
     def add_task(self, name, description):
         """
@@ -33,6 +37,8 @@ class TaskList:
         """
         task = Task(name, description)
         self.tasks.append(task)
+        logging.info("Tâche '%s' ajoutée à la liste.", task.name)
+
 
     def remove_task(self, task_name):
         """
@@ -47,8 +53,11 @@ class TaskList:
         for task in self.tasks:
             if task.name == task_name:
                 self.tasks.remove(task)
+                logging.info("Tâche '%s' supprimé de la liste.", task_name)
                 return
         print(f"Tâche '{task_name}' introuvable dans la liste.")
+        error_logger.error(f"Tâche '{task_name}' introuvable dans la liste.")
+
 
     def mark_task_completed(self, task_name):
         """
@@ -65,8 +74,15 @@ class TaskList:
                 task.mark_completed()
                 self.archived_tasks.append(task)
                 self.tasks.remove(task)
+                info_message = f"Tâche '{task_name}' complétée."
+                logging.info(info_message)
+                debug_logger.debug(info_message)
                 return
         print(f"Tâche '{task_name}' introuvable dans la liste.")
+        error_message = f"Tâche '{task_name}' introuvable dans la liste."
+        logging.error(error_message)
+        error_logger.error(error_message)
+
 
     def display_tasks(self):
         """
