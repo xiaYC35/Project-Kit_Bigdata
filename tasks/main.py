@@ -32,6 +32,7 @@ error_handler.setFormatter(error_formatter)
 error_logger.addHandler(error_handler)
 
 def display_menu():
+    
     print("\nMenu :")
     print("1. Ajouter une tâche")
     print("2. Supprimer une tâche")
