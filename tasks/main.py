@@ -41,6 +41,7 @@ def display_menu():
     print("5. Afficher la liste des tâches archivées")
     print("6. Quitter")
 
+
 def main():
     task_list = TaskList()
 
