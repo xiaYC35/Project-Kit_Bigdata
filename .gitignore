@@ -1,6 +1,7 @@
 venv/
 __pycache__/
 htmlcov/
-debug.log
 info.log
+debug.log
+error.log
 .coverage
