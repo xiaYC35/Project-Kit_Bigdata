@@ -76,5 +76,6 @@ def main():
         else:
             print("Choix non valide. Veuillez entrer un numéro valide.")
 
+
 if __name__ == "__main__":
     main()

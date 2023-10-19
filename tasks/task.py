@@ -10,9 +10,7 @@ class Task:
 
     def __init__(self, name, description):
         """
-        Initializes a Task object with a unique ID, 
-        name, description, completion status (False), 
-        and creation date (current datetime).
+        Initializes a Task object with a unique ID, name, description, completion status (False), and creation date (current datetime).
 
         Args:
             name (str): The name of the task.
@@ -48,9 +46,7 @@ class Task:
 
     def __str__(self):
         """
-        Returns a string representation of the task, 
-        including its ID, name, description, completion status, 
-        and creation date.
+        Returns a string representation of the task, including its ID, name, description, completion status, and creation date.
 
         Returns:
             str: A formatted string representation of the task.
