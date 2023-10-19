@@ -5,7 +5,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [INFO] %(message)s',
     handlers=[
-        logging.FileHandler('info.log'), #Affiche les INFOS dans le fichier app.log
+        logging.FileHandler('logs/info.log'), #Affiche les INFOS dans le fichier app.log
         #logging.StreamHandler() #Affiche les INFOS dans le terminal
     ]
 )
@@ -13,7 +13,7 @@ logging.basicConfig(
 # Configuration pour le débogage
 debug_logger = logging.getLogger("debug_logger")  # Utilisez le même nom ici (avec un underscore)
 debug_logger.setLevel(logging.DEBUG)
-debug_handler = logging.FileHandler('debug.log')
+debug_handler = logging.FileHandler('logs/debug.log')
 debug_handler.setLevel(logging.DEBUG)
 debug_formatter = logging.Formatter('%(asctime)s [DEBUG] %(message)s')
 debug_handler.setFormatter(debug_formatter)
@@ -22,7 +22,7 @@ debug_logger.addHandler(debug_handler)
 # Configuration pour les erreurs
 error_logger = logging.getLogger("error_logger")
 error_logger.setLevel(logging.ERROR)
-error_handler = logging.FileHandler('error.log')
+error_handler = logging.FileHandler('logs/error.log')
 error_handler.setLevel(logging.ERROR)
 error_formatter = logging.Formatter('%(asctime)s [ERROR] %(message)s')
 error_handler.setFormatter(error_formatter)
