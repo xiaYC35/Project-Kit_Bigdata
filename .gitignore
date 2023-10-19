@@ -3,3 +3,4 @@ __pycache__/
 htmlcov/
 debug.log
 info.log
+.coverage
