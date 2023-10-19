@@ -4,7 +4,6 @@ import logging
 debug_logger = logging.getLogger("debug_logger")
 error_logger = logging.getLogger("error_logger")
 
-
 class Task:
     _id_counter = 0
 

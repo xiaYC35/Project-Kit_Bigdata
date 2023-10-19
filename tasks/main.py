@@ -31,7 +31,6 @@ error_formatter = logging.Formatter('%(asctime)s [ERROR] %(message)s')
 error_handler.setFormatter(error_formatter)
 error_logger.addHandler(error_handler)
 
-
 def display_menu():
     print("\nMenu :")
     print("1. Ajouter une tâche")
@@ -40,7 +39,6 @@ def display_menu():
     print("4. Afficher la liste des tâches en cours")
     print("5. Afficher la liste des tâches archivées")
     print("6. Quitter")
-
 
 def main():
     task_list = TaskList()
@@ -75,7 +73,6 @@ def main():
             break
         else:
             print("Choix non valide. Veuillez entrer un numéro valide.")
-
 
 if __name__ == "__main__":
     main()

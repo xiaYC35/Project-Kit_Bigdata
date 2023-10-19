@@ -39,7 +39,6 @@ class TaskList:
         self.tasks.append(task)
         logging.info("Tâche '%s' ajoutée à la liste.", task.name)
 
-
     def remove_task(self, task_name):
         """
         Removes a task from the tasks list.
@@ -57,7 +56,6 @@ class TaskList:
                 return
         print(f"Tâche '{task_name}' introuvable dans la liste.")
         error_logger.error(f"Tâche '{task_name}' introuvable dans la liste.")
-
 
     def mark_task_completed(self, task_name):
         """
@@ -82,7 +80,6 @@ class TaskList:
         error_message = f"Tâche '{task_name}' introuvable dans la liste."
         logging.error(error_message)
         error_logger.error(error_message)
-
 
     def display_tasks(self):
         """
