@@ -1,3 +1,4 @@
+from .tasklist import TaskList
 import logging
 
 # Configuration pour les informations
@@ -27,8 +28,6 @@ error_handler.setLevel(logging.ERROR)
 error_formatter = logging.Formatter('%(asctime)s [ERROR] %(message)s')
 error_handler.setFormatter(error_formatter)
 error_logger.addHandler(error_handler)
-
-from .tasklist import TaskList
 
 def display_menu():
     print("\nMenu :")
