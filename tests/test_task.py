@@ -2,6 +2,7 @@ from tasks.task import Task
 
 import pytest
 
+
 class TestCodeUnderTest:
 
     # create a task with a name and description
@@ -13,15 +14,17 @@ class TestCodeUnderTest:
     # mark a task as completed
     def test_mark_task_as_completed(self):
         task = Task("Task 1", "Description 1")
-        assert task.completed == False
+        assert task.completed is False
         task.mark_completed()
-        assert task.completed == True
+        assert task.completed is True
 
     # print a task's string representation
     def test_print_task_string_representation(self):
         task = Task("Task 1", "Description 1")
         id = task.id
-        expected_output = "ID : " + str(id) + "\nTâche : Task 1\nDescription : Description 1\nStatut : Non terminée\nDate de création : " + str(task.created_date) + "\n"
+        expected_output = "ID : " + str(id) + "\nTâche : Task 1\n \
+                        Description : Description 1\nStatut : Non terminée\nDate de création : \
+                        " + str(task.created_date) + "\n"
         assert str(task) == expected_output
 
     # create multiple tasks and check if their IDs are unique
@@ -43,8 +46,8 @@ class TestCodeUnderTest:
     # mark a task as completed multiple times
     def test_mark_task_as_completed_multiple_times(self):
         task = Task("Task 1", "Description 1")
-        assert task.completed == False
+        assert task.completed is False
         task.mark_completed()
-        assert task.completed == True
+        assert task.completed is True
         task.mark_completed()
-        assert task.completed == True
+        assert task.completed is True
