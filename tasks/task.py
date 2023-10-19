@@ -44,7 +44,7 @@ class Task:
         debug_logger.debug(
             f"La tâche '{self.name}' a été marquée comme terminée.")
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Returns a string representation of the task, including its ID, name, description, completion status, and creation date.
 
