@@ -48,7 +48,8 @@ Vous pourrez utiliser les fonctionnalités de gestion de tâches via le menu.
 
 ## Documentation
 
-Vous pouvez trouver la documentation complète de cette bibliothèque en [Ouvrir la documentation](docs/_build/html/index.html)
+Vous pouvez trouver la documentation complète de cette bibliothèque en [Documentation](file:///Users/salimatoutraore/Desktop/Télécom/S1/Kit_data/Projet/Project-Kit_Bigdata/docs/_build/html/index.html)
+
 
 
 
