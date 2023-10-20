@@ -48,7 +48,11 @@ Vous pourrez utiliser les fonctionnalités de gestion de tâches via le menu.
 
 ## Documentation
 
-Vous pouvez trouver la documentation complète de cette bibliothèque en [Documentation](/Users/salimatoutraore/Desktop/Télécom/S1/Kit_data/Projet/Project-Kit_Bigdata/docs/_build/html/index.html)
+Pour ouvrir la documentation, exécutez la commande suivante :
+
+```bash
+open docs/_build/html/index.html
+```
 
 
 
@@ -58,14 +62,14 @@ Vous pouvez trouver la documentation complète de cette bibliothèque en [Docume
 
 Les contributions sont les bienvenues ! Pour contribuer à ce projet, suivez ces étapes :
 
-Fork le projet.
-Créez une branche pour votre fonctionnalité (git checkout -b ma-nouvelle-fonctionnalite).
-Commit et poussez vos modifications (git commit -m 'Ajout de ma nouvelle fonctionnalité').
-Créez une demande d'extraction.
+1. Fork le projet.
+2. Créez une branche pour votre fonctionnalité (git checkout -b ma-nouvelle-fonctionnalite).
+3. Commit et poussez vos modifications (git commit -m 'Ajout de ma nouvelle fonctionnalité').
+4. Créez une demande d'extraction.
 
 ## Auteurs
 
-Alban Pereira - alban.pereira98@gmail.com
-Yuchen Xia - xiayuchen35@gmail.com
-Aurélien Raulo - aurelien0raulo@gmail.com
-Salimatou Traore - tra.salimatou@gmail.com
+- Alban Pereira - alban.pereira98@gmail.com
+- Yuchen Xia - xiayuchen35@gmail.com
+- Aurélien Raulo - aurelien0raulo@gmail.com
+- Salimatou Traore - tra.salimatou@gmail.com
