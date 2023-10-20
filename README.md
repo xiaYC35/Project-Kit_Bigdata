@@ -9,6 +9,7 @@ Une bibliothèque Python pour la gestion efficace des tâches, des projets et de
   - [Description du projet](#description-du-projet)
   - [Installation](#installation)
   - [Utilisation](#utilisation)
+  - [Documentation](#documentation)
   - [Contributions](#contributions)
   - [Auteurs](#auteurs)
 
@@ -43,6 +44,13 @@ python -m tasks.main
 ```
 
 Vous pourrez utiliser les fonctionnalités de gestion de tâches via le menu.
+
+
+## Documentation
+
+Vous pouvez trouver la documentation complète de cette bibliothèque en [cliquant ici](docs/_build/html/index.html).
+
+
 
 ## Contributions
 

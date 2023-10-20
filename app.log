@@ -1,0 +1,14 @@
+2023-10-17 17:47:04,138 [INFO] Tâche 'trier' ajoutée à la liste.
+2023-10-17 17:50:18,377 [INFO] Tâche 'manger' ajoutée à la liste.
+2023-10-17 17:50:33,223 [INFO] Tâche 'menage' ajoutée à la liste.
+2023-10-17 17:50:39,660 [INFO] Tâche 'menage' complétée.
+2023-10-17 17:51:43,023 [INFO] Tâche 'trier' supprimé de la liste.
+2023-10-17 18:04:36,364 [INFO] Tâche 'rire' ajoutée à la liste.
+2023-10-17 18:21:34,418 [INFO] Nouvelle liste de tâches créée.
+2023-10-17 18:22:31,833 [INFO] Création d'une nouvelle tâche : manger
+2023-10-17 18:22:31,835 [INFO] Tâche 'manger' ajoutée à la liste.
+2023-10-17 18:23:07,352 [INFO] Le nom doit être fourni pour une tâche.
+2023-10-17 18:27:43,019 [INFO] Nouvelle liste de tâches créée.
+2023-10-17 18:28:00,369 [INFO] Création d'une nouvelle tâche : faire
+2023-10-17 18:28:00,373 [INFO] Tâche 'faire' ajoutée à la liste.
+2023-10-17 18:28:07,364 [INFO] Tâche 'trier' introuvable dans la liste.
