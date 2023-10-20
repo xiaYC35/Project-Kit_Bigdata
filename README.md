@@ -48,7 +48,7 @@ Vous pourrez utiliser les fonctionnalités de gestion de tâches via le menu.
 
 ## Documentation
 
-Vous pouvez trouver la documentation complète de cette bibliothèque en [Documentation](./docs/_build/html/index.html)
+Vous pouvez trouver la documentation complète de cette bibliothèque en [Documentation](https://./docs/_build/html/index.html)
 
 
 
