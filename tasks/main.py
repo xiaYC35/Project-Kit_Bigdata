@@ -1,5 +1,7 @@
 from .tasklist import TaskList
 import logging
+from .main_gui import use_gui, TaskManagerGUI
+
 
 # Configuration pour les informations
 logging.basicConfig(
@@ -7,7 +9,7 @@ logging.basicConfig(
     format='%(asctime)s [INFO] %(message)s',
     handlers=[
         # Affiche les INFOS dans le fichier app.log
-        logging.FileHandler('logs/info.log'),
+        logging.FileHandler('info.log'),
         # logging.StreamHandler() #Affiche les INFOS dans le terminal
     ]
 )
@@ -16,7 +18,7 @@ logging.basicConfig(
 # Utilisez le même nom ici (avec un underscore)
 debug_logger = logging.getLogger("debug_logger")
 debug_logger.setLevel(logging.DEBUG)
-debug_handler = logging.FileHandler('logs/debug.log')
+debug_handler = logging.FileHandler('debug.log')
 debug_handler.setLevel(logging.DEBUG)
 debug_formatter = logging.Formatter('%(asctime)s [DEBUG] %(message)s')
 debug_handler.setFormatter(debug_formatter)
@@ -25,7 +27,7 @@ debug_logger.addHandler(debug_handler)
 # Configuration pour les erreurs
 error_logger = logging.getLogger("error_logger")
 error_logger.setLevel(logging.ERROR)
-error_handler = logging.FileHandler('logs/error.log')
+error_handler = logging.FileHandler('error.log')
 error_handler.setLevel(logging.ERROR)
 error_formatter = logging.Formatter('%(asctime)s [ERROR] %(message)s')
 error_handler.setFormatter(error_formatter)
@@ -39,7 +41,8 @@ def display_menu():
     print("3. Marquer une tâche comme terminée")
     print("4. Afficher la liste des tâches en cours")
     print("5. Afficher la liste des tâches archivées")
-    print("6. Quitter")
+    print("6. Utiliser l'interface graphique")
+    print("7. Quitter")
 
 
 def main():
@@ -72,9 +75,15 @@ def main():
             print("Liste des tâches archivées :")
             task_list.display_archived_tasks()
         elif choice == "6":
+            use_gui_cli(task_list)  # Appeler la fonction pour lancer l'interface graphique
+        elif choice == "7":
             break
         else:
             print("Choix non valide. Veuillez entrer un numéro valide.")
+
+def use_gui_cli(task_list):
+    use_gui(task_list)
+
 
 
 if __name__ == "__main__":
