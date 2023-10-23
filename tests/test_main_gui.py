@@ -1,9 +1,8 @@
-import pytest
+
 import tkinter as tk
 from tkinter import messagebox
 from tasks.tasklist import TaskList
 from tasks.main_gui import use_gui, TaskManagerGUI
-import datetime
 
 class TestCodeUnderTest:
 
@@ -30,6 +29,7 @@ class TestCodeUnderTest:
         assert self.task_list.tasks[0].name == "Task 1"
         assert self.task_list.tasks[0].description == "Description 1"
         assert self.gui.task_listbox.get(0) == "Task 1"
+
 
     def test_select_task(self):
         self.gui.input_name.insert(tk.END, "Task 1")
