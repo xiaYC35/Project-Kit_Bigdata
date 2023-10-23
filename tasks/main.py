@@ -8,7 +8,6 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [INFO] %(message)s',
     handlers=[
-        # Affiche les INFOS dans le fichier app.log
         logging.FileHandler('info.log'),
         # logging.StreamHandler() #Affiche les INFOS dans le terminal
     ]
