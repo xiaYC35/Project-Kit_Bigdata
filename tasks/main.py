@@ -1,8 +1,7 @@
 from .tasklist import TaskList
 from logs import configure_logging
 
-import logging
-
+from .main_gui import use_gui, TaskManagerGUI
 configure_logging()
 
 def display_menu():
@@ -12,7 +11,8 @@ def display_menu():
     print("3. Marquer une tâche comme terminée")
     print("4. Afficher la liste des tâches en cours")
     print("5. Afficher la liste des tâches archivées")
-    print("6. Quitter")
+    print("6. Utiliser l'interface graphique")
+    print("7. Quitter")
 
 
 def main():
@@ -45,9 +45,15 @@ def main():
             print("Liste des tâches archivées :")
             task_list.display_archived_tasks()
         elif choice == "6":
+            use_gui_cli(task_list)  # Appeler la fonction pour lancer l'interface graphique
+        elif choice == "7":
             break
         else:
             print("Choix non valide. Veuillez entrer un numéro valide.")
+
+def use_gui_cli(task_list):
+    use_gui(task_list)
+
 
 
 if __name__ == "__main__":
