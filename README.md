@@ -54,10 +54,6 @@ Pour ouvrir la documentation, exécutez la commande suivante :
 open docs/_build/html/index.html
 ```
 
-
-
-
-
 ## Contributions
 
 Les contributions sont les bienvenues ! Pour contribuer à ce projet, suivez ces étapes :
@@ -69,7 +65,7 @@ Les contributions sont les bienvenues ! Pour contribuer à ce projet, suivez ces
 
 ## Auteurs
 
-- Alban Pereira - alban.pereira98@gmail.com
-- Yuchen Xia - xiayuchen35@gmail.com
-- Aurélien Raulo - aurelien0raulo@gmail.com
-- Salimatou Traore - tra.salimatou@gmail.com
+- Alban Pereira - alban.pereira@telecom-paris.fr
+- Yuchen Xia - yuchen.xia@telecom-paris.fr
+- Aurélien Raulo - aurelien.raulo@telecom-paris.fr
+- Salimatou Traore - salimatou.traore@telecom-paris.fr
