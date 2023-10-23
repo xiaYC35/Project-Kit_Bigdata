@@ -9,6 +9,7 @@ Une bibliothèque Python pour la gestion efficace des tâches, des projets et de
   - [Description du projet](#description-du-projet)
   - [Installation](#installation)
   - [Utilisation](#utilisation)
+  - [Documentation](#documentation)
   - [Contributions](#contributions)
   - [Auteurs](#auteurs)
 
@@ -44,18 +45,31 @@ python -m tasks.main
 
 Vous pourrez utiliser les fonctionnalités de gestion de tâches via le menu.
 
+
+## Documentation
+
+Pour ouvrir la documentation, exécutez la commande suivante :
+
+```bash
+open docs/_build/html/index.html
+```
+
+
+
+
+
 ## Contributions
 
 Les contributions sont les bienvenues ! Pour contribuer à ce projet, suivez ces étapes :
 
-Fork le projet.
-Créez une branche pour votre fonctionnalité (git checkout -b ma-nouvelle-fonctionnalite).
-Commit et poussez vos modifications (git commit -m 'Ajout de ma nouvelle fonctionnalité').
-Créez une demande d'extraction.
+1. Fork le projet.
+2. Créez une branche pour votre fonctionnalité (git checkout -b ma-nouvelle-fonctionnalite).
+3. Commit et poussez vos modifications (git commit -m 'Ajout de ma nouvelle fonctionnalité').
+4. Créez une demande d'extraction.
 
 ## Auteurs
 
-Alban Pereira - alban.pereira98@gmail.com
-Yuchen Xia - xiayuchen35@gmail.com
-Aurélien Raulo - aurelien0raulo@gmail.com
-Salimatou Traore - tra.salimatou@gmail.com
+- Alban Pereira - alban.pereira98@gmail.com
+- Yuchen Xia - xiayuchen35@gmail.com
+- Aurélien Raulo - aurelien0raulo@gmail.com
+- Salimatou Traore - tra.salimatou@gmail.com
