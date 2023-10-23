@@ -45,7 +45,7 @@ jobs:
         export DISPLAY=:99
     - name: Interface tests with pytest
       run: |
-        xvfb-run -a pytest tests/interfce_tests/
+        xvfb-run -a pytest tests/interface_tests/
     - name: Run Tests with Coverage > 90%
       run: |
         coverage run -m pytest tests/
