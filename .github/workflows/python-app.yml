@@ -42,10 +42,11 @@ jobs:
         pytest tests/unit_tests/
     - name: Set DISPLAY variable for interface tests
       run: |
-        export DISPLAY=:99
+        export DISPLAY=:99  # Vous pouvez spécifier un autre numéro d'affichage si nécessaire
     - name: Interface tests with pytest
       run: |
-        xvfb-run -a pytest tests/interface_tests/
+        xvfb-run -a --server-args="-screen 0 1920x1080x24" pytest --no-header tests/interface_tests/
+
     - name: Run Tests with Coverage > 90%
       run: |
         coverage run -m pytest tests/
