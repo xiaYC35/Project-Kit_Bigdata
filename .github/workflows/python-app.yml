@@ -37,7 +37,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        export DISPLAY=:99
+        Xvfb :99 &
+        pytest tests/
     - name: Run Tests with Coverage > 90%
       run: |
         coverage run -m pytest
