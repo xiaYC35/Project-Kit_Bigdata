@@ -1,37 +1,8 @@
 from .tasklist import TaskList
-import logging
+from logs import configure_logging
+
 from .main_gui import use_gui, TaskManagerGUI
-
-
-# Configuration pour les informations
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s [INFO] %(message)s',
-    handlers=[
-        logging.FileHandler('info.log'),
-        # logging.StreamHandler() #Affiche les INFOS dans le terminal
-    ]
-)
-
-# Configuration pour le débogage
-# Utilisez le même nom ici (avec un underscore)
-debug_logger = logging.getLogger("debug_logger")
-debug_logger.setLevel(logging.DEBUG)
-debug_handler = logging.FileHandler('debug.log')
-debug_handler.setLevel(logging.DEBUG)
-debug_formatter = logging.Formatter('%(asctime)s [DEBUG] %(message)s')
-debug_handler.setFormatter(debug_formatter)
-debug_logger.addHandler(debug_handler)
-
-# Configuration pour les erreurs
-error_logger = logging.getLogger("error_logger")
-error_logger.setLevel(logging.ERROR)
-error_handler = logging.FileHandler('error.log')
-error_handler.setLevel(logging.ERROR)
-error_formatter = logging.Formatter('%(asctime)s [ERROR] %(message)s')
-error_handler.setFormatter(error_formatter)
-error_logger.addHandler(error_handler)
-
+configure_logging()
 
 def display_menu():
     print("\nMenu :")

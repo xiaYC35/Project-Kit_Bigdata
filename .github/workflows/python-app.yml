@@ -54,3 +54,8 @@ jobs:
     - name: safety
       run: |
         safety check
+    - name: Generate Docs from Sphinx
+      run: |
+        cd docs
+        pip install furo
+        make html
