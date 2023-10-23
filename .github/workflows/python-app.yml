@@ -45,3 +45,7 @@ jobs:
     - name: safety
       run: |
         safety check
+    - name: Generate Docs from Sphinx
+      run: |
+        cd docs
+        make html
