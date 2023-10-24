@@ -156,6 +156,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">Project-Kit_Bigdata</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project-Kit_Bigdata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../logs.html">logs package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../setup.html">setup module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tasks.html">tasks package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tests.html">tests package</a></li>
@@ -195,7 +196,40 @@
         </div>
         <article role="main">
           <h1>Source code for tasks.tasklist</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">.task</span> <span class="kn">import</span> <span class="n">Task</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Task List Management Module</span>
+
+<span class="sd">This module defines a `TaskList` class for managing a list of tasks. The class maintains two lists: `tasks` for active tasks and `archived_tasks` for completed tasks. It provides methods for adding, removing, and archiving tasks, as well as displaying the details of tasks.</span>
+
+<span class="sd">Classes:</span>
+<span class="sd">    TaskList: Manages a list of tasks and provides task-related operations.</span>
+
+<span class="sd">Attributes:</span>
+<span class="sd">    - tasks (list): A list of active Task objects.</span>
+<span class="sd">    - archived_tasks (list): A list of completed Task objects.</span>
+
+<span class="sd">Methods:</span>
+<span class="sd">    - add_task(name, description): Add a new task to the list.</span>
+<span class="sd">    - remove_task(task_name): Remove a task from the list.</span>
+<span class="sd">    - mark_task_completed(task_name): Mark a task as completed and move it to archived tasks.</span>
+<span class="sd">    - display_tasks(): Display details of active tasks.</span>
+<span class="sd">    - display_archived_tasks(): Display details of completed tasks.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    task_list = TaskList()</span>
+<span class="sd">    task_list.add_task(&quot;Task 1&quot;, &quot;Description 1&quot;)</span>
+<span class="sd">    task_list.display_tasks()</span>
+
+<span class="sd">    Output:</span>
+<span class="sd">    ID : 0</span>
+<span class="sd">    Task : Task 1</span>
+<span class="sd">    Description : Description 1</span>
+<span class="sd">    Status : Not completed</span>
+<span class="sd">    Created Date : &lt;current date and time&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">.task</span> <span class="kn">import</span> <span class="n">Task</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">debug_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;debug_logger&quot;</span><span class="p">)</span>
 <span class="n">error_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;error_logger&quot;</span><span class="p">)</span>
@@ -334,7 +368,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, aurelien
+                Copyright &#169; 2023, Alban Pereira - Yuchen Xia - Aurélien Raulo - Salimatou Traore
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

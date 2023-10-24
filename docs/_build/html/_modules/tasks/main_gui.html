@@ -1,0 +1,555 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>tasks.main_gui - Projet-Kit_Bigdata 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Projet-Kit_Bigdata 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Projet-Kit_Bigdata 1.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">Project-Kit_Bigdata</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project-Kit_Bigdata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../logs.html">logs package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tasks.html">tasks package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <h1>Source code for tasks.main_gui</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Task Manager Application with Graphical User Interface (GUI)</span>
+
+<span class="sd">This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.</span>
+
+<span class="sd">Main Features:</span>
+<span class="sd">- Add a new task with a name and description.</span>
+<span class="sd">- View the list of active tasks.</span>
+<span class="sd">- Delete a task from the list.</span>
+<span class="sd">- Mark a task as completed.</span>
+<span class="sd">- View the list of archived tasks.</span>
+
+<span class="sd">File Contents:</span>
+<span class="sd">- TaskManagerGUI: The main GUI class for managing tasks.</span>
+<span class="sd">- use_gui(task_list): Function to create and run the GUI.</span>
+<span class="sd">- main function: Initializes a TaskList and launches the GUI.</span>
+
+<span class="sd">Example Usage:</span>
+<span class="sd">    task_list = TaskList()</span>
+<span class="sd">    use_gui(task_list)</span>
+
+<span class="sd">Flow:</span>
+<span class="sd">    1. Create the main window for the GUI.</span>
+<span class="sd">    2. Initialize the TaskManagerGUI class, which sets up the GUI elements.</span>
+<span class="sd">    3. Run the GUI event loop using the mainloop method of the Tkinter root window.</span>
+
+<span class="sd">Returns:</span>
+<span class="sd">    None. It creates a GUI for the task manager application.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
+<span class="kn">from</span> <span class="nn">tasks.tasklist</span> <span class="kn">import</span> <span class="n">TaskList</span>
+
+
+<div class="viewcode-block" id="use_gui">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.use_gui">[docs]</a>
+<span class="k">def</span> <span class="nf">use_gui</span><span class="p">(</span><span class="n">task_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a graphical user interface (GUI) for a task manager application.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        task_list (TaskList): An instance of the TaskList class representing a list of tasks.</span>
+
+<span class="sd">    Example Usage:</span>
+<span class="sd">        task_list = TaskList()</span>
+<span class="sd">        use_gui(task_list)</span>
+
+<span class="sd">    Flow:</span>
+<span class="sd">        1. Creates a Tkinter root window and sets its title.</span>
+<span class="sd">        2. Creates an instance of the TaskManagerGUI class, passing the root window and the task_list as arguments.</span>
+<span class="sd">        3. Calls the run method of the TaskManagerGUI instance, which starts the GUI event loop and displays the GUI to the user.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None. It creates a GUI for the task manager application.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Gestionnaire de Tâches - Interface Graphique&quot;</span><span class="p">)</span>
+
+    <span class="n">gui</span> <span class="o">=</span> <span class="n">TaskManagerGUI</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">task_list</span><span class="p">)</span>
+    <span class="n">gui</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="TaskManagerGUI">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI">[docs]</a>
+<span class="k">class</span> <span class="nc">TaskManagerGUI</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">task_list</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes the GUI for a task manager application.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            root (tk.Tk): The root window of the GUI.</span>
+<span class="sd">            task_list (TaskList): An instance of the TaskList class representing a list of tasks.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        Summary:</span>
+<span class="sd">        The __init__ method of the TaskManagerGUI class initializes the GUI for a task manager application. It creates the main window and divides it into three parts: left, middle, and right. The left part is for adding tasks, the middle part is for displaying the list of tasks, and the right part is for displaying the details of the selected task. It also creates buttons and input fields for adding tasks, displaying tasks, deleting tasks, marking tasks as completed, and displaying archived tasks.</span>
+
+<span class="sd">        Example Usage:</span>
+<span class="sd">        task_list = TaskList()</span>
+<span class="sd">        root = tk.Tk()</span>
+<span class="sd">        gui = TaskManagerGUI(root, task_list)</span>
+<span class="sd">        gui.run()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Gestionnaire de Tâches - Interface Graphique&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span> <span class="o">=</span> <span class="n">task_list</span>
+
+        <span class="c1"># Divisez la fenêtre en trois parties (gauche, milieu et droite)</span>
+        <span class="n">left_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">left_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+        <span class="n">middle_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">middle_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>  <span class="c1"># Masquer le cadre initialement</span>
+
+        <span class="c1"># Partie gauche pour l&#39;ajout de tâches</span>
+        <span class="n">label_name</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">left_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Nom de la tâche:&quot;</span><span class="p">)</span>
+        <span class="n">label_name</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_name</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">left_frame</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_name</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="n">label_description</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+            <span class="n">left_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Description de la tâche:&quot;</span><span class="p">)</span>
+        <span class="n">label_description</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_description</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">left_frame</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_description</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="n">add_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">left_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Ajouter Tâche&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">add_task</span><span class="p">)</span>
+        <span class="n">add_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="c1"># Partie milieu pour la liste des tâches</span>
+        <span class="n">taches_en_cours_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">middle_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Tâches en cours&quot;</span><span class="p">)</span>
+        <span class="n">taches_en_cours_label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="n">instruction_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+            <span class="n">middle_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Sélectionnez une tâche pour voir les détails&quot;</span><span class="p">)</span>
+        <span class="n">instruction_label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_listbox</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Listbox</span><span class="p">(</span><span class="n">middle_frame</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_listbox</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Partie droite pour afficher les détails de la tâche sélectionnée</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">details_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Détails de la Tâche&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">details_label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">details_text</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">details_text</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="c1"># Bouton pour supprimer la tâche sélectionnée</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delete_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Supprimer&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">delete_selected_task</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delete_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>  <span class="c1"># Masquer le bouton initialement</span>
+
+        <span class="c1"># Bouton pour marqué terminée la tâche sélectionnée</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">complete_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Marquer comme Complétée&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">complete_selected_task</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">complete_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>  <span class="c1"># Masquer le bouton initialement</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">display_archived_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">middle_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Afficher Tâches Archivées&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">display_archived_tasks</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">display_archived_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TaskManagerGUI.delete_selected_task">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.delete_selected_task">[docs]</a>
+    <span class="k">def</span> <span class="nf">delete_selected_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deletes the selected task from the task list.</span>
+
+<span class="sd">        If there is a selected task, it retrieves the name of the task and removes it from the task list using the `remove_task` method of the `TaskList` class.</span>
+<span class="sd">        It sets `self.selected_task` to None and updates the display of tasks by calling the `display_tasks` method.</span>
+<span class="sd">        It updates the text of the `details_label` to &quot;Détails de la Tâche&quot; and clears the text in the `details_text` widget.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="p">:</span>
+            <span class="n">task_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="o">.</span><span class="n">name</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">remove_task</span><span class="p">(</span><span class="n">task_name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">display_tasks</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">details_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Détails de la Tâche&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">details_text</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TaskManagerGUI.complete_selected_task">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.complete_selected_task">[docs]</a>
+    <span class="k">def</span> <span class="nf">complete_selected_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Marks the selected task as completed.</span>
+
+<span class="sd">        If there is a selected task, it retrieves the name of the task and marks it as completed using the `mark_task_completed` method of the `TaskList` class.</span>
+<span class="sd">        It sets `self.selected_task` to None and updates the display of tasks by calling the `display_tasks` method.</span>
+<span class="sd">        It updates the text of the `details_label` to &quot;Détails de la Tâche&quot; and clears the text in the `details_text` widget.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="p">:</span>
+            <span class="n">task_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="o">.</span><span class="n">name</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">mark_task_completed</span><span class="p">(</span><span class="n">task_name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">display_tasks</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">details_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Détails de la Tâche&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">details_text</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TaskManagerGUI.add_task">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.add_task">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a task to the task list.</span>
+
+<span class="sd">        Retrieves the name and description of a task from the input fields in the GUI.</span>
+<span class="sd">        Calls the add_task method of the TaskList class to add the task to the task list.</span>
+<span class="sd">        If successful, shows a success message box and clears the input fields.</span>
+<span class="sd">        Finally, calls the display_tasks method to update the display of tasks.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_name</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_description</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span>
+                <span class="s2">&quot;Succès&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Tâche &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; ajoutée à la liste.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input_name</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input_description</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">display_tasks</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showerror</span><span class="p">(</span><span class="s2">&quot;Erreur&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Erreur : </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TaskManagerGUI.display_tasks">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.display_tasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">display_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the list of tasks.</span>
+
+<span class="sd">        Clears the task listbox in the GUI.</span>
+<span class="sd">        Iterates over the tasks in the task list and inserts their names into the task listbox.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_listbox</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">tasks</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_listbox</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TaskManagerGUI.display_archived_tasks">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.display_archived_tasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">display_archived_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Displays the archived tasks.</span>
+
+<span class="sd">        Retrieves the archived tasks from the task list.</span>
+<span class="sd">        If there are no archived tasks, shows an information message box.</span>
+<span class="sd">        Otherwise, creates a text string by joining the string representations of the archived tasks.</span>
+<span class="sd">        Shows an information message box with the text string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">archived_tasks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">archived_tasks</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">archived_tasks</span><span class="p">:</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span><span class="s2">&quot;Tâches Archivées&quot;</span><span class="p">,</span> <span class="s2">&quot;Aucune tâche archivée.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">archived_tasks_text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">task</span><span class="p">)</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">archived_tasks</span><span class="p">])</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span><span class="s2">&quot;Tâches Archivées&quot;</span><span class="p">,</span> <span class="n">archived_tasks_text</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TaskManagerGUI.display_selected_task">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.display_selected_task">[docs]</a>
+    <span class="k">def</span> <span class="nf">display_selected_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Updates the details section of the GUI with the selected task&#39;s information and displays buttons for deleting the task, marking it as completed, and displaying archived tasks. If no task is selected, it hides the details section and the buttons.</span>
+
+<span class="sd">        :param event: The event object that triggered the method, usually a mouse click event.</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">selected_task_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_listbox</span><span class="o">.</span><span class="n">curselection</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">selected_task_index</span><span class="p">:</span>
+            <span class="n">selected_task_index</span> <span class="o">=</span> <span class="n">selected_task_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">tasks</span><span class="p">[</span><span class="n">selected_task_index</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">details_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Détails de la Tâche &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">details_text</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">)</span>  <span class="c1"># Effacez le contenu actuel</span>
+            <span class="n">task_details</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">details_text</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">,</span> <span class="n">task_details</span><span class="p">)</span>
+
+            <span class="c1"># Afficher le cadre des détails et les boutons en utilisant self</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">delete_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">complete_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+            <span class="c1"># Afficher le bouton &quot;Afficher les tâches archivées&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">display_archived_button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Masquer le cadre des détails, les boutons et le bouton &quot;Afficher les tâches archivées&quot; si aucune tâche n&#39;est sélectionnée</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_frame</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">delete_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">complete_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
+
+            <span class="c1"># Masquer le bouton &quot;Afficher les tâches archivées&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">display_archived_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="TaskManagerGUI.run">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.run">[docs]</a>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Starts the GUI event loop and displays the GUI to the user.</span>
+
+<span class="sd">        Example Usage:</span>
+<span class="sd">        ```python</span>
+<span class="sd">        task_list = TaskList()</span>
+<span class="sd">        root = tk.Tk()</span>
+<span class="sd">        gui = TaskManagerGUI(root, task_list)</span>
+<span class="sd">        gui.run()</span>
+<span class="sd">        ```</span>
+
+<span class="sd">        Inputs: None</span>
+
+<span class="sd">        Flow:</span>
+<span class="sd">        1. Binds the `display_selected_task` method to the `&lt;&lt;ListboxSelect&gt;&gt;` event of the `task_listbox` widget.</span>
+<span class="sd">        2. Starts the GUI event loop by calling the `mainloop` method of the `root` window.</span>
+
+<span class="sd">        Outputs: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_listbox</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;&lt;ListboxSelect&gt;&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">display_selected_task</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">task_list</span> <span class="o">=</span> <span class="n">TaskList</span><span class="p">()</span>
+    <span class="n">use_gui</span><span class="p">(</span><span class="n">task_list</span><span class="p">)</span>
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Alban Pereira - Yuchen Xia - Aurélien Raulo - Salimatou Traore
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

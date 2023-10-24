@@ -156,6 +156,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">Project-Kit_Bigdata</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project-Kit_Bigdata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../logs.html">logs package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../setup.html">setup module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tasks.html">tasks package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tests.html">tests package</a></li>
@@ -195,7 +196,32 @@
         </div>
         <article role="main">
           <h1>Source code for tests.test_tasklist</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">tasks.tasklist</span> <span class="kn">import</span> <span class="n">TaskList</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Test Suite for TaskList Class</span>
+
+<span class="sd">This test suite contains test cases for the TaskList class, which is responsible for managing a list of tasks. The test cases cover various aspects of task management and verification of expected behaviors.</span>
+
+<span class="sd">Test Cases:</span>
+<span class="sd">    - test_add_task_adds_new_task_to_tasks_list(): Verifies the addition of a new task to the tasks list.</span>
+<span class="sd">    - test_remove_task_removes_task_from_tasks_list(): Ensures the removal of a task from the tasks list.</span>
+<span class="sd">    - test_mark_task_completed_marks_task_as_completed_and_moves_to_archived_tasks_list(): Validates marking a task as completed and moving it to the archived tasks list.</span>
+<span class="sd">    - test_add_task_with_empty_name_raises_value_error(): Checks if adding a task with an empty name raises a ValueError.</span>
+<span class="sd">    - test_add_task_with_empty_description_raises_value_error(): Checks if adding a task with an empty description raises a ValueError.</span>
+<span class="sd">    - test_remove_task_with_non_existent_task_name_prints_error_message(): Verifies that attempting to remove a non-existent task name prints an error message.</span>
+
+<span class="sd">Each test case focuses on a specific functionality of the TaskList class and includes an explanation of the expected behavior.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    test_add_task_adds_new_task_to_tasks_list()</span>
+<span class="sd">    test_remove_task_removes_task_from_tasks_list()</span>
+
+<span class="sd">    Output:</span>
+<span class="sd">    - Ensures that a new task is correctly added to the tasks list.</span>
+<span class="sd">    - Validates that a task is successfully removed from the tasks list.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">tasks.tasklist</span> <span class="kn">import</span> <span class="n">TaskList</span>
 
 <span class="kn">import</span> <span class="nn">pytest</span>
 
@@ -302,7 +328,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, aurelien
+                Copyright &#169; 2023, Alban Pereira - Yuchen Xia - Aurélien Raulo - Salimatou Traore
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
