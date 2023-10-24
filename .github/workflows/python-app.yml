@@ -53,3 +53,4 @@ jobs:
     - name: Control docstring
       run: |
         pip install pydocstyle
+        pydocstyle .
