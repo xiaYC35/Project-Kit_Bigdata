@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="setup module" href="setup.html" /><link rel="prev" title="Welcome to Projet-Kit_Bigdata’s documentation!" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="logs package" href="logs.html" /><link rel="prev" title="Welcome to Projet-Kit_Bigdata’s documentation!" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
         <title>Project-Kit_Bigdata - Projet-Kit_Bigdata 1.0.0 documentation</title>
@@ -157,6 +157,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Project-Kit_Bigdata</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project-Kit_Bigdata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">logs package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tasks.html">tasks package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
@@ -200,10 +201,33 @@
 <h1>Project-Kit_Bigdata<a class="headerlink" href="#project-kit-bigdata" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="logs.html">logs package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logs.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html#module-logs.logs">logs.logs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="logs.html#logs.logs.configure_logging"><code class="docutils literal notranslate"><span class="pre">configure_logging()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html#module-logs">Module contents</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">setup module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tasks.html">tasks package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tasks.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tasks.html#tasks-main-module">tasks.main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html#module-tasks.main_gui">tasks.main_gui module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI.add_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.add_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI.complete_selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.complete_selected_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI.delete_selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.delete_selected_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI.display_archived_tasks"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_archived_tasks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI.display_selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_selected_task()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI.display_tasks"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_tasks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.main_gui.TaskManagerGUI.run"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tasks.html#tasks.main_gui.use_gui"><code class="docutils literal notranslate"><span class="pre">use_gui()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="tasks.html#module-tasks.task">tasks.task module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tasks.html#tasks.task.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="tasks.html#tasks.task.Task.mark_completed"><code class="docutils literal notranslate"><span class="pre">Task.mark_completed()</span></code></a></li>
@@ -270,12 +294,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="setup.html">
+          <a class="next-page" href="logs.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">setup module</div>
+                <div class="title">logs package</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

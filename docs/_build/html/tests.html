@@ -157,6 +157,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">Project-Kit_Bigdata</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project-Kit_Bigdata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="logs.html">logs package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tasks.html">tasks package</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">tests package</a></li>
@@ -203,6 +204,26 @@
 </section>
 <section id="module-tests.test_task">
 <span id="tests-test-task-module"></span><h2>tests.test_task module<a class="headerlink" href="#module-tests.test_task" title="Link to this heading">#</a></h2>
+<p>Test Suite for Task Management Application</p>
+<p>This test suite contains test cases for the Task Management Application, covering various aspects of the application.</p>
+<dl class="simple">
+<dt>Test Cases:</dt><dd><ul class="simple">
+<li><p>test_create_task_with_name_and_description(): Test creating a task with a name and description.</p></li>
+<li><p>test_mark_task_as_completed(): Test marking a task as completed.</p></li>
+<li><p>test_print_task_string_representation(): Test the string representation of a task.</p></li>
+<li><p>test_unique_task_ids(): Test creating multiple tasks with unique IDs.</p></li>
+<li><p>test_create_task_with_empty_name_or_description(): Test creating a task with an empty name or description.</p></li>
+<li><p>test_mark_task_as completed_multiple_times(): Test marking a task as completed multiple times.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Each test case verifies specific functionality or behavior of the application.</p>
+<p class="rubric">Example</p>
+<p>test_create_task_with_name_and_description()
+test_mark_task_as_completed()</p>
+<p>Output:
+- Verifies that the task is created with the correct name and description.
+- Verifies that the task is correctly marked as completed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="tests.test_task.TestCodeUnderTest">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_task.</span></span><span class="sig-name descname"><span class="pre">TestCodeUnderTest</span></span><a class="reference internal" href="_modules/tests/test_task.html#TestCodeUnderTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_task.TestCodeUnderTest" title="Link to this definition">#</a></dt>
@@ -254,6 +275,26 @@ Verifies that the IDs of the created tasks are unique.</p>
 </section>
 <section id="module-tests.test_tasklist">
 <span id="tests-test-tasklist-module"></span><h2>tests.test_tasklist module<a class="headerlink" href="#module-tests.test_tasklist" title="Link to this heading">#</a></h2>
+<p>Test Suite for TaskList Class</p>
+<p>This test suite contains test cases for the TaskList class, which is responsible for managing a list of tasks. The test cases cover various aspects of task management and verification of expected behaviors.</p>
+<dl class="simple">
+<dt>Test Cases:</dt><dd><ul class="simple">
+<li><p>test_add_task_adds_new_task_to_tasks_list(): Verifies the addition of a new task to the tasks list.</p></li>
+<li><p>test_remove_task_removes_task_from_tasks_list(): Ensures the removal of a task from the tasks list.</p></li>
+<li><p>test_mark_task_completed_marks_task_as_completed_and_moves_to_archived_tasks_list(): Validates marking a task as completed and moving it to the archived tasks list.</p></li>
+<li><p>test_add_task_with_empty_name_raises_value_error(): Checks if adding a task with an empty name raises a ValueError.</p></li>
+<li><p>test_add_task_with_empty_description_raises_value_error(): Checks if adding a task with an empty description raises a ValueError.</p></li>
+<li><p>test_remove_task_with_non_existent_task_name_prints_error_message(): Verifies that attempting to remove a non-existent task name prints an error message.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Each test case focuses on a specific functionality of the TaskList class and includes an explanation of the expected behavior.</p>
+<p class="rubric">Example</p>
+<p>test_add_task_adds_new_task_to_tasks_list()
+test_remove_task_removes_task_from_tasks_list()</p>
+<p>Output:
+- Ensures that a new task is correctly added to the tasks list.
+- Validates that a task is successfully removed from the tasks list.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="tests.test_tasklist.TestCodeUnderTest">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_tasklist.</span></span><span class="sig-name descname"><span class="pre">TestCodeUnderTest</span></span><a class="reference internal" href="_modules/tests/test_tasklist.html#TestCodeUnderTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_tasklist.TestCodeUnderTest" title="Link to this definition">#</a></dt>

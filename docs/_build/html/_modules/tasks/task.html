@@ -156,6 +156,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">Project-Kit_Bigdata</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project-Kit_Bigdata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../logs.html">logs package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../setup.html">setup module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tasks.html">tasks package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tests.html">tests package</a></li>
@@ -195,7 +196,32 @@
         </div>
         <article role="main">
           <h1>Source code for tasks.task</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Task Class - task.py</span>
+
+<span class="sd">This module defines the `Task` class, representing a task in the to-do list application.</span>
+
+<span class="sd">The `Task` class includes the following attributes and methods:</span>
+<span class="sd">- Attributes:</span>
+<span class="sd">  - id (int): A unique identifier for the task.</span>
+<span class="sd">  - name (str): The name of the task.</span>
+<span class="sd">  - description (str): A description of the task.</span>
+<span class="sd">  - completed (bool): A flag indicating whether the task is completed.</span>
+<span class="sd">  - created_date (datetime): The date and time when the task was created.</span>
+
+<span class="sd">- Methods:</span>
+<span class="sd">  - __init__(self, name, description): Initializes a Task object with the provided name and description. The task is created with a unique ID, and completion status is set to False.</span>
+<span class="sd">  - mark_completed(self): Marks the task as completed by setting the completion status to True.</span>
+<span class="sd">  - __str__(self) -&gt; str: Returns a formatted string representation of the task, including its ID, name, description, completion status, and creation date.</span>
+
+<span class="sd">Exceptions:</span>
+<span class="sd">- ValueError: If the name or description is not provided during task initialization.</span>
+
+<span class="sd">This class is used to represent individual tasks within the to-do list application, allowing users to create, manage, and mark tasks as completed. Each task has a unique identifier (ID) and associated information such as name, description, completion status, and creation date.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="n">debug_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;debug_logger&quot;</span><span class="p">)</span>
@@ -268,7 +294,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, aurelien
+                Copyright &#169; 2023, Alban Pereira - Yuchen Xia - Aurélien Raulo - Salimatou Traore
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

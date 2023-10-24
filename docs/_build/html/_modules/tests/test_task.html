@@ -156,6 +156,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">Project-Kit_Bigdata</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Project-Kit_Bigdata</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../logs.html">logs package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../setup.html">setup module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tasks.html">tasks package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tests.html">tests package</a></li>
@@ -195,7 +196,33 @@
         </div>
         <article role="main">
           <h1>Source code for tests.test_task</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">tasks.task</span> <span class="kn">import</span> <span class="n">Task</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Test Suite for Task Management Application</span>
+
+<span class="sd">This test suite contains test cases for the Task Management Application, covering various aspects of the application.</span>
+
+<span class="sd">Test Cases:</span>
+<span class="sd">    - test_create_task_with_name_and_description(): Test creating a task with a name and description.</span>
+<span class="sd">    - test_mark_task_as_completed(): Test marking a task as completed.</span>
+<span class="sd">    - test_print_task_string_representation(): Test the string representation of a task.</span>
+<span class="sd">    - test_unique_task_ids(): Test creating multiple tasks with unique IDs.</span>
+<span class="sd">    - test_create_task_with_empty_name_or_description(): Test creating a task with an empty name or description.</span>
+<span class="sd">    - test_mark_task_as completed_multiple_times(): Test marking a task as completed multiple times.</span>
+
+<span class="sd">Each test case verifies specific functionality or behavior of the application.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    test_create_task_with_name_and_description()</span>
+<span class="sd">    test_mark_task_as_completed()</span>
+
+<span class="sd">    Output:</span>
+<span class="sd">    - Verifies that the task is created with the correct name and description.</span>
+<span class="sd">    - Verifies that the task is correctly marked as completed.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">tasks.task</span> <span class="kn">import</span> <span class="n">Task</span>
 
 <span class="kn">import</span> <span class="nn">pytest</span>
 
@@ -303,7 +330,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, aurelien
+                Copyright &#169; 2023, Alban Pereira - Yuchen Xia - Aurélien Raulo - Salimatou Traore
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

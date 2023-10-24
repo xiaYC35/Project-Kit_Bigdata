@@ -12,6 +12,14 @@ tasks.main module
    :undoc-members:
    :show-inheritance:
 
+tasks.main\_gui module
+----------------------
+
+.. automodule:: tasks.main_gui
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 tasks.task module
 -----------------
 
