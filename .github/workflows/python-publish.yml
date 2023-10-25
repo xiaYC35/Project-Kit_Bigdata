@@ -36,8 +36,8 @@ jobs:
     - name: Build package
       run: python setup.py sdist bdist_wheel
 
-    - name: Upload to PyPI
+    - name: Publish to PyPI
       env:
         TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{pypi-AgEIcHlwaS5vcmcCJGMyNjUwNDQ3LWQzYjktNGJiYi04MThmLWRiOWQ2NzQ0YjU5YQACKlszLCIzMjFmNzdhZS05YzdiLTQ3NWEtYTk1Mi03MTcxMGQwNDk2ZmUiXQAABiArfFcPdj_RE8y9a2i7cciNvagSlynAxpVQcKZQHYGR2w}}
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: twine upload dist/*
