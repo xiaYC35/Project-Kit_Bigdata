@@ -197,7 +197,7 @@
         <article role="main">
           <h1>Source code for logs.logs</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Logging Configuration Function</span>
+<span class="sd">Logging Configuration Function.</span>
 
 <span class="sd">This function configures logging for the application by setting up three different loggers:</span>
 <span class="sd">- Main logger for INFO level messages.</span>
@@ -219,6 +219,22 @@
 <div class="viewcode-block" id="configure_logging">
 <a class="viewcode-back" href="../../logs.html#logs.logs.configure_logging">[docs]</a>
 <span class="k">def</span> <span class="nf">configure_logging</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Log Configuration Function.</span>
+
+<span class="sd">    This function configures logging for the application by setting up three different loggers:</span>
+<span class="sd">    - Main logger for INFO level messages.</span>
+<span class="sd">    - debug_logger for DEBUG level messages.</span>
+<span class="sd">    - error_logger for ERROR level messages.</span>
+
+<span class="sd">    Log messages are saved in separate log files in the &#39;logs&#39; directory.</span>
+
+<span class="sd">    Functions:</span>
+<span class="sd">        - configure_logging(): Configures the logging settings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
         <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
         <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> [INFO] </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
