@@ -50,3 +50,7 @@ jobs:
         cd docs
         pip install furo
         make html
+    - name: Control docstring
+      run: |
+        pip install pydocstyle
+        pydocstyle .

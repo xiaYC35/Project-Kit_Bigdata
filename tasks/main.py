@@ -1,5 +1,5 @@
 """
-Task Management Application
+Task Management Application.
 
 This module defines a simple task management application. It allows users to add, remove, and mark tasks as completed.
 The main function initializes the task list, displays a menu for user interaction, and handles user input.
@@ -13,9 +13,7 @@ from .main_gui import use_gui, TaskManagerGUI
 configure_logging()
 
 def display_menu():
-    """
-    Display the main menu options for the task management application.
-    """
+    """Display the main menu options for the task management application."""
     print("\nMenu :")
     print("1. Ajouter une tâche")
     print("2. Supprimer une tâche")
@@ -28,7 +26,7 @@ def display_menu():
 
 def main():
     """
-    Main function for the task management application.
+    Define main function for the task management application.
 
     This function initializes the task list, displays the main menu, and handles user input.
     """
@@ -68,6 +66,7 @@ def main():
             print("Choix non valide. Veuillez entrer un numéro valide.")
 
 def use_gui_cli(task_list):
+    """Start the Graphical User Interface (GUI) for the task management application from the command line."""
     use_gui(task_list)
 
 
