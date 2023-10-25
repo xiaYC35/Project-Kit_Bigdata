@@ -207,7 +207,7 @@
 </section>
 <section id="module-tasks.main_gui">
 <span id="tasks-main-gui-module"></span><h2>tasks.main_gui module<a class="headerlink" href="#module-tasks.main_gui" title="Link to this heading">#</a></h2>
-<p>Task Manager Application with Graphical User Interface (GUI)</p>
+<p>Task Manager Application with Graphical User Interface (GUI).</p>
 <p>This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.</p>
 <p>Main Features:
 - Add a new task with a name and description.
@@ -239,10 +239,202 @@ use_gui(task_list)</p>
 <dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tasks.main_gui.</span></span><span class="sig-name descname"><span class="pre">TaskManagerGUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Task Manager Application with Graphical User Interface (GUI).</p>
+<p>This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.</p>
+<p>Main Features:
+- Add a new task with a name and description.
+- View the list of active tasks.
+- Delete a task from the list.
+- Mark a task as completed.
+- View the list of archived tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>tk.Tk</em>) – The root window of the GUI.</p></li>
+<li><p><strong>task_list</strong> (<a class="reference internal" href="#tasks.tasklist.TaskList" title="tasks.tasklist.TaskList"><em>TaskList</em></a>) – An instance of the TaskList class representing a list of tasks.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Example Usage:</dt><dd><p>task_list = TaskList()
+root = tk.Tk()
+gui = TaskManagerGUI(root, task_list)
+gui.run()</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.root">
+<span class="sig-name descname"><span class="pre">root</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.root" title="Link to this definition">#</a></dt>
+<dd><p>The main window of the GUI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Tk</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.task_list">
+<span class="sig-name descname"><span class="pre">task_list</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.task_list" title="Link to this definition">#</a></dt>
+<dd><p>An instance of the TaskList class representing a list of tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#tasks.tasklist.TaskList" title="tasks.tasklist.TaskList">TaskList</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.task_listbox">
+<span class="sig-name descname"><span class="pre">task_listbox</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.task_listbox" title="Link to this definition">#</a></dt>
+<dd><p>The widget for displaying the list of tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Listbox</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.selected_task">
+<span class="sig-name descname"><span class="pre">selected_task</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.selected_task" title="Link to this definition">#</a></dt>
+<dd><p>The currently selected task.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.input_name">
+<span class="sig-name descname"><span class="pre">input_name</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.input_name" title="Link to this definition">#</a></dt>
+<dd><p>The input field for task names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Entry</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.input_description">
+<span class="sig-name descname"><span class="pre">input_description</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.input_description" title="Link to this definition">#</a></dt>
+<dd><p>The input field for task descriptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Entry</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.details_label">
+<span class="sig-name descname"><span class="pre">details_label</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.details_label" title="Link to this definition">#</a></dt>
+<dd><p>The label for displaying task details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Label</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.details_text">
+<span class="sig-name descname"><span class="pre">details_text</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.details_text" title="Link to this definition">#</a></dt>
+<dd><p>The widget for displaying task details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Text</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.delete_button">
+<span class="sig-name descname"><span class="pre">delete_button</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.delete_button" title="Link to this definition">#</a></dt>
+<dd><p>The button for deleting the selected task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Button</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.complete_button">
+<span class="sig-name descname"><span class="pre">complete_button</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.complete_button" title="Link to this definition">#</a></dt>
+<dd><p>The button for marking the selected task as completed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Button</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.display_archived_button">
+<span class="sig-name descname"><span class="pre">display_archived_button</span></span><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.display_archived_button" title="Link to this definition">#</a></dt>
+<dd><p>The button for displaying archived tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tk.Button</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the GUI.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.delete_selected_task">
+<span class="sig-name descname"><span class="pre">delete_selected_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.delete_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.delete_selected_task" title="Link to this definition">#</a></dt>
+<dd><p>Delete the selected task.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.complete_selected_task">
+<span class="sig-name descname"><span class="pre">complete_selected_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.complete_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.complete_selected_task" title="Link to this definition">#</a></dt>
+<dd><p>Mark the selected task as completed.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.add_task">
-<span class="sig-name descname"><span class="pre">add_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.add_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.add_task" title="Link to this definition">#</a></dt>
-<dd><p>Adds a task to the task list.</p>
+<span class="sig-name descname"><span class="pre">add_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.add_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.add_task" title="Link to this definition">#</a></dt>
+<dd><p>Add a task to the task list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.display_tasks">
+<span class="sig-name descname"><span class="pre">display_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.display_tasks" title="Link to this definition">#</a></dt>
+<dd><p>Display the list of tasks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.display_archived_tasks">
+<span class="sig-name descname"><span class="pre">display_archived_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_archived_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.display_archived_tasks" title="Link to this definition">#</a></dt>
+<dd><p>Display the archived tasks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.display_selected_task">
+<span class="sig-name descname"><span class="pre">display_selected_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.display_selected_task" title="Link to this definition">#</a></dt>
+<dd><p>Update the details section with the selected task’s information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.run" title="Link to this definition">#</a></dt>
+<dd><p>Start the GUI event loop.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None. It creates a GUI for the task manager application.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">add_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.add_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd><p>Add a task to the task list.</p>
 <p>Retrieves the name and description of a task from the input fields in the GUI.
 Calls the add_task method of the TaskList class to add the task to the task list.
 If successful, shows a success message box and clears the input fields.
@@ -250,27 +442,27 @@ Finally, calls the display_tasks method to update the display of tasks.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.complete_selected_task">
-<span class="sig-name descname"><span class="pre">complete_selected_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.complete_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.complete_selected_task" title="Link to this definition">#</a></dt>
-<dd><p>Marks the selected task as completed.</p>
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">complete_selected_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.complete_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
+<dd><p>Mark the selected task as completed.</p>
 <p>If there is a selected task, it retrieves the name of the task and marks it as completed using the <cite>mark_task_completed</cite> method of the <cite>TaskList</cite> class.
 It sets <cite>self.selected_task</cite> to None and updates the display of tasks by calling the <cite>display_tasks</cite> method.
 It updates the text of the <cite>details_label</cite> to “Détails de la Tâche” and clears the text in the <cite>details_text</cite> widget.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.delete_selected_task">
-<span class="sig-name descname"><span class="pre">delete_selected_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.delete_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.delete_selected_task" title="Link to this definition">#</a></dt>
-<dd><p>Deletes the selected task from the task list.</p>
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">delete_selected_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.delete_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
+<dd><p>Delete the selected task from the task list.</p>
 <p>If there is a selected task, it retrieves the name of the task and removes it from the task list using the <cite>remove_task</cite> method of the <cite>TaskList</cite> class.
 It sets <cite>self.selected_task</cite> to None and updates the display of tasks by calling the <cite>display_tasks</cite> method.
 It updates the text of the <cite>details_label</cite> to “Détails de la Tâche” and clears the text in the <cite>details_text</cite> widget.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.display_archived_tasks">
-<span class="sig-name descname"><span class="pre">display_archived_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_archived_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.display_archived_tasks" title="Link to this definition">#</a></dt>
-<dd><p>Displays the archived tasks.</p>
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">display_archived_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_archived_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition">#</a></dt>
+<dd><p>Display the archived tasks.</p>
 <p>Retrieves the archived tasks from the task list.
 If there are no archived tasks, shows an information message box.
 Otherwise, creates a text string by joining the string representations of the archived tasks.
@@ -278,9 +470,9 @@ Shows an information message box with the text string.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.display_selected_task">
-<span class="sig-name descname"><span class="pre">display_selected_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.display_selected_task" title="Link to this definition">#</a></dt>
-<dd><p>Updates the details section of the GUI with the selected task’s information and displays buttons for deleting the task, marking it as completed, and displaying archived tasks. If no task is selected, it hides the details section and the buttons.</p>
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">display_selected_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_selected_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition">#</a></dt>
+<dd><p>Update the details section of the GUI with the selected task’s information and displays buttons for deleting the task, marking it as completed, and displaying archived tasks. If no task is selected, it hides the details section and the buttons.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>event</strong> – The event object that triggered the method, usually a mouse click event.</p>
@@ -292,17 +484,17 @@ Shows an information message box with the text string.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.display_tasks">
-<span class="sig-name descname"><span class="pre">display_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.display_tasks" title="Link to this definition">#</a></dt>
-<dd><p>Displays the list of tasks.</p>
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">display_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.display_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition">#</a></dt>
+<dd><p>Display the list of tasks.</p>
 <p>Clears the task listbox in the GUI.
 Iterates over the tasks in the task list and inserts their names into the task listbox.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tasks.main_gui.TaskManagerGUI.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.TaskManagerGUI.run" title="Link to this definition">#</a></dt>
-<dd><p>Starts the GUI event loop and displays the GUI to the user.</p>
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#TaskManagerGUI.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Link to this definition">#</a></dt>
+<dd><p>Start the GUI event loop and displays the GUI to the user.</p>
 <p>Example Usage:
 <code class="docutils literal notranslate"><span class="pre">`python</span>
 <span class="pre">task_list</span> <span class="pre">=</span> <span class="pre">TaskList()</span>
@@ -322,7 +514,7 @@ Iterates over the tasks in the task list and inserts their names into the task l
 <dl class="py function">
 <dt class="sig sig-object py" id="tasks.main_gui.use_gui">
 <span class="sig-prename descclassname"><span class="pre">tasks.main_gui.</span></span><span class="sig-name descname"><span class="pre">use_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/main_gui.html#use_gui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.main_gui.use_gui" title="Link to this definition">#</a></dt>
-<dd><p>Creates a graphical user interface (GUI) for a task manager application.</p>
+<dd><p>Create a graphical user interface (GUI) for a task manager application.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>task_list</strong> (<a class="reference internal" href="#tasks.tasklist.TaskList" title="tasks.tasklist.TaskList"><em>TaskList</em></a>) – An instance of the TaskList class representing a list of tasks.</p>
@@ -349,7 +541,7 @@ use_gui(task_list)</p>
 </section>
 <section id="module-tasks.task">
 <span id="tasks-task-module"></span><h2>tasks.task module<a class="headerlink" href="#module-tasks.task" title="Link to this heading">#</a></h2>
-<p>Task Class - task.py</p>
+<p>Task Class - task.py.</p>
 <p>This module defines the <cite>Task</cite> class, representing a task in the to-do list application.</p>
 <p>The <cite>Task</cite> class includes the following attributes and methods:
 - Attributes:</p>
@@ -375,10 +567,32 @@ use_gui(task_list)</p>
 <dt class="sig sig-object py" id="tasks.task.Task">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tasks.task.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/task.html#Task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.task.Task" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Task Class - task.py.</p>
+<p>This module defines the <cite>Task</cite> class, representing a task in the to-do list application.</p>
+<p>The <cite>Task</cite> class includes the following attributes and methods:
+- Attributes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>id (int): A unique identifier for the task.</p></li>
+<li><p>name (str): The name of the task.</p></li>
+<li><p>description (str): A description of the task.</p></li>
+<li><p>completed (bool): A flag indicating whether the task is completed.</p></li>
+<li><p>created_date (datetime): The date and time when the task was created.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Methods:
+- __init__(self, name, description): Initializes a Task object with the provided name and description. The task is created with a unique ID, and completion status is set to False.
+- mark_completed(self): Marks the task as completed by setting the completion status to True.
+- __str__(self) -&gt; str: Returns a formatted string representation of the task, including its ID, name, description, completion status, and creation date.</p></li>
+</ul>
+<p>Exceptions:
+- ValueError: If the name or description is not provided during task initialization.</p>
+<p>This class is used to represent individual tasks within the to-do list application, allowing users to create, manage, and mark tasks as completed. Each task has a unique identifier (ID) and associated information such as name, description, completion status, and creation date.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tasks.task.Task.mark_completed">
 <span class="sig-name descname"><span class="pre">mark_completed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/task.html#Task.mark_completed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tasks.task.Task.mark_completed" title="Link to this definition">#</a></dt>
-<dd><p>Marks the task as completed by setting the completion status to True.</p>
+<dd><p>Mark the task as completed by setting the completion status to True.</p>
 </dd></dl>
 
 </dd></dl>
@@ -386,7 +600,7 @@ use_gui(task_list)</p>
 </section>
 <section id="module-tasks.tasklist">
 <span id="tasks-tasklist-module"></span><h2>tasks.tasklist module<a class="headerlink" href="#module-tasks.tasklist" title="Link to this heading">#</a></h2>
-<p>Task List Management Module</p>
+<p>Task List Management Module.</p>
 <p>This module defines a <cite>TaskList</cite> class for managing a list of tasks. The class maintains two lists: <cite>tasks</cite> for active tasks and <cite>archived_tasks</cite> for completed tasks. It provides methods for adding, removing, and archiving tasks, as well as displaying the details of tasks.</p>
 <dl class="simple">
 <dt>Classes:</dt><dd><p>TaskList: Manages a list of tasks and provides task-related operations.</p>
@@ -512,9 +726,9 @@ Created Date : &lt;current date and time&gt;</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">add_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.add_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
-<dd><p>Adds a new task to the tasks list.</p>
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">add_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.add_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id7" title="Link to this definition">#</a></dt>
+<dd><p>Add a new task to the tasks list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -529,9 +743,9 @@ Created Date : &lt;current date and time&gt;</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">display_archived_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.display_archived_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
-<dd><p>Displays the details of each task in the archived tasks list.</p>
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">display_archived_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.display_archived_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id8" title="Link to this definition">#</a></dt>
+<dd><p>Display the details of each task in the archived tasks list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
@@ -540,9 +754,9 @@ Created Date : &lt;current date and time&gt;</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">display_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.display_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
-<dd><p>Displays the details of each task in the tasks list.</p>
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">display_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.display_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id9" title="Link to this definition">#</a></dt>
+<dd><p>Display the details of each task in the tasks list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
@@ -551,9 +765,9 @@ Created Date : &lt;current date and time&gt;</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">mark_task_completed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.mark_task_completed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition">#</a></dt>
-<dd><p>Marks a task as completed and moves it to the archived tasks list.</p>
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">mark_task_completed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.mark_task_completed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id10" title="Link to this definition">#</a></dt>
+<dd><p>Mark a task as completed and moves it to the archived tasks list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>task_name</strong> (<em>str</em>) – The name of the task to be marked as completed.</p>
@@ -565,9 +779,9 @@ Created Date : &lt;current date and time&gt;</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">remove_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.remove_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition">#</a></dt>
-<dd><p>Removes a task from the tasks list.</p>
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">remove_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks/tasklist.html#TaskList.remove_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id11" title="Link to this definition">#</a></dt>
+<dd><p>Remove a task from the tasks list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>task_name</strong> (<em>str</em>) – The name of the task to be removed.</p>
@@ -583,6 +797,7 @@ Created Date : &lt;current date and time&gt;</p>
 </section>
 <section id="module-tasks">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tasks" title="Link to this heading">#</a></h2>
+<p>Packaging initializing.</p>
 </section>
 </section>
 
@@ -646,13 +861,32 @@ Created Date : &lt;current date and time&gt;</p>
 <li><a class="reference internal" href="#tasks-main-module">tasks.main module</a></li>
 <li><a class="reference internal" href="#module-tasks.main_gui">tasks.main_gui module</a><ul>
 <li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI</span></code></a><ul>
-<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.add_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.add_task()</span></code></a></li>
-<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.complete_selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.complete_selected_task()</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.root"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.root</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.task_list"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.task_list</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.task_listbox"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.task_listbox</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.selected_task</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.input_name"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.input_name</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.input_description"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.input_description</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.details_label"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.details_label</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.details_text"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.details_text</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.delete_button"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.delete_button</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.complete_button"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.complete_button</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.display_archived_button"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_archived_button</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.__init__"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.delete_selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.delete_selected_task()</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.complete_selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.complete_selected_task()</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.add_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.add_task()</span></code></a></li>
+<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.display_tasks"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_tasks()</span></code></a></li>
 <li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.display_archived_tasks"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_archived_tasks()</span></code></a></li>
 <li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.display_selected_task"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_selected_task()</span></code></a></li>
-<li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.display_tasks"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_tasks()</span></code></a></li>
 <li><a class="reference internal" href="#tasks.main_gui.TaskManagerGUI.run"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.run()</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.add_task()</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.complete_selected_task()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.delete_selected_task()</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_archived_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_selected_task()</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.display_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">TaskManagerGUI.run()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#tasks.main_gui.use_gui"><code class="docutils literal notranslate"><span class="pre">use_gui()</span></code></a></li>
@@ -674,11 +908,11 @@ Created Date : &lt;current date and time&gt;</p>
 <li><a class="reference internal" href="#tasks.tasklist.TaskList.mark_task_completed"><code class="docutils literal notranslate"><span class="pre">TaskList.mark_task_completed()</span></code></a></li>
 <li><a class="reference internal" href="#tasks.tasklist.TaskList.display_tasks"><code class="docutils literal notranslate"><span class="pre">TaskList.display_tasks()</span></code></a></li>
 <li><a class="reference internal" href="#tasks.tasklist.TaskList.display_archived_tasks"><code class="docutils literal notranslate"><span class="pre">TaskList.display_archived_tasks()</span></code></a></li>
-<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">TaskList.add_task()</span></code></a></li>
-<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">TaskList.display_archived_tasks()</span></code></a></li>
-<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">TaskList.display_tasks()</span></code></a></li>
-<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">TaskList.mark_task_completed()</span></code></a></li>
-<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">TaskList.remove_task()</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">TaskList.add_task()</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">TaskList.display_archived_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">TaskList.display_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">TaskList.mark_task_completed()</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">TaskList.remove_task()</span></code></a></li>
 </ul>
 </li>
 </ul>
