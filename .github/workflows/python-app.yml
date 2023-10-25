@@ -42,7 +42,10 @@ jobs:
       run: |
         coverage run -m pytest tests/
         coverage report -m --fail-under=90
-    - name: safety
+    - name: Control docstring
+      run: |
+        pydocstyle .
+    - name: Safety
       run: |
         safety check
     - name: Generate Docs from Sphinx
@@ -50,7 +53,3 @@ jobs:
         cd docs
         pip install furo
         make html
-    - name: Control docstring
-      run: |
-        pip install pydocstyle
-        pydocstyle .
