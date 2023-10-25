@@ -1,0 +1,43 @@
+# This workflow will upload a Python Package using Twine when a release is created
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Upload Python Package to PYPI
+
+on:
+  release:
+    types:
+      - created
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Build package
+      run: python setup.py sdist bdist_wheel
+
+    - name: Upload to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{pypi-AgEIcHlwaS5vcmcCJGMyNjUwNDQ3LWQzYjktNGJiYi04MThmLWRiOWQ2NzQ0YjU5YQACKlszLCIzMjFmNzdhZS05YzdiLTQ3NWEtYTk1Mi03MTcxMGQwNDk2ZmUiXQAABiArfFcPdj_RE8y9a2i7cciNvagSlynAxpVQcKZQHYGR2w}}
+      run: twine upload dist/*
