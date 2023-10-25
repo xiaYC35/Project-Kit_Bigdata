@@ -1,5 +1,5 @@
 """
-Configuration du Projet - setup.py.
+Configuration du Projet - setup.py
 
 Ce fichier de configuration définit les métadonnées et les informations nécessaires à la construction et à l'installation du projet "my_task_manager".
 
@@ -22,8 +22,8 @@ from setuptools import setup, find_packages
 
 # Les données de projet
 setup(
-    name='To-do-list',
-    version='1.1',
+    name='my_task_manager',
+    version='1.2',
     description='Métadonnées et informations sur la construction de projet To-do List',
     author='Alban Pereira, Yuchen Xia, Aurélien Raulo, Salimatou Traore',
     author_email='alban.pereira98@gmail.com, xiayuchen35@gmail.com, aurelien0raulo@gmail.com, tra.salimatou@gmail.com',
@@ -34,3 +34,5 @@ setup(
     ],
     zip_safe=False,
 )
+
+# view at https://pypi.org/project/my-task-manager/1.2/

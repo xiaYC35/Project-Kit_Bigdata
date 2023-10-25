@@ -1,5 +1,5 @@
 """
-Task Manager Application with Graphical User Interface (GUI)
+Task Manager Application with Graphical User Interface (GUI).
 
 This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.
 
@@ -36,7 +36,7 @@ from tasks.tasklist import TaskList
 
 def use_gui(task_list):
     """
-    Creates a graphical user interface (GUI) for a task manager application.
+    Create a graphical user interface (GUI) for a task manager application.
 
     Args:
         task_list (TaskList): An instance of the TaskList class representing a list of tasks.
@@ -61,9 +61,58 @@ def use_gui(task_list):
 
 
 class TaskManagerGUI:
+    """
+    Task Manager Application with Graphical User Interface (GUI).
+
+    This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.
+
+    Main Features:
+    - Add a new task with a name and description.
+    - View the list of active tasks.
+    - Delete a task from the list.
+    - Mark a task as completed.
+    - View the list of archived tasks.
+
+    Args:
+        root (tk.Tk): The root window of the GUI.
+        task_list (TaskList): An instance of the TaskList class representing a list of tasks.
+
+    Example Usage:
+        task_list = TaskList()
+        root = tk.Tk()
+        gui = TaskManagerGUI(root, task_list)
+        gui.run()
+
+    Attributes:
+        root (tk.Tk): The main window of the GUI.
+        task_list (TaskList): An instance of the TaskList class representing a list of tasks.
+        task_listbox (tk.Listbox): The widget for displaying the list of tasks.
+        selected_task: The currently selected task.
+        input_name (tk.Entry): The input field for task names.
+        input_description (tk.Entry): The input field for task descriptions.
+        details_label (tk.Label): The label for displaying task details.
+        details_text (tk.Text): The widget for displaying task details.
+        delete_button (tk.Button): The button for deleting the selected task.
+        complete_button (tk.Button): The button for marking the selected task as completed.
+        display_archived_button (tk.Button): The button for displaying archived tasks.
+
+    Methods:
+        __init__(self, root, task_list): Initialize the GUI.
+        delete_selected_task(self): Delete the selected task.
+        complete_selected_task(self): Mark the selected task as completed.
+        add_task(self): Add a task to the task list.
+        display_tasks(self): Display the list of tasks.
+        display_archived_tasks(self): Display the archived tasks.
+        display_selected_task(self, event): Update the details section with the selected task's information.
+        run(self): Start the GUI event loop.
+
+    Returns:
+        None. It creates a GUI for the task manager application.
+    """
+    
     def __init__(self, root, task_list):
         """
-        Initializes the GUI for a task manager application.
+        Initialize the GUI for a task manager application.
 
         Args:
             root (tk.Tk): The root window of the GUI.
@@ -147,13 +196,12 @@ class TaskManagerGUI:
 
     def delete_selected_task(self):
         """
-        Deletes the selected task from the task list.
+        Delete the selected task from the task list.
 
         If there is a selected task, it retrieves the name of the task and removes it from the task list using the `remove_task` method of the `TaskList` class.
         It sets `self.selected_task` to None and updates the display of tasks by calling the `display_tasks` method.
         It updates the text of the `details_label` to "Détails de la Tâche" and clears the text in the `details_text` widget.
         """
-
         if self.selected_task:
             task_name = self.selected_task.name
             self.task_list.remove_task(task_name)
@@ -164,13 +212,12 @@ class TaskManagerGUI:
 
     def complete_selected_task(self):
         """
-        Marks the selected task as completed.
+        Mark the selected task as completed.
 
         If there is a selected task, it retrieves the name of the task and marks it as completed using the `mark_task_completed` method of the `TaskList` class.
         It sets `self.selected_task` to None and updates the display of tasks by calling the `display_tasks` method.
         It updates the text of the `details_label` to "Détails de la Tâche" and clears the text in the `details_text` widget.
         """
-
         if self.selected_task:
             task_name = self.selected_task.name
             self.task_list.mark_task_completed(task_name)
@@ -181,7 +228,7 @@ class TaskManagerGUI:
 
     def add_task(self):
         """
-        Adds a task to the task list.
+        Add a task to the task list.
 
         Retrieves the name and description of a task from the input fields in the GUI.
         Calls the add_task method of the TaskList class to add the task to the task list.
@@ -203,7 +250,7 @@ class TaskManagerGUI:
 
     def display_tasks(self):
         """
-        Displays the list of tasks.
+        Display the list of tasks.
 
         Clears the task listbox in the GUI.
         Iterates over the tasks in the task list and inserts their names into the task listbox.
@@ -215,7 +262,7 @@ class TaskManagerGUI:
 
     def display_archived_tasks(self):
         """
-        Displays the archived tasks.
+        Display the archived tasks.
 
         Retrieves the archived tasks from the task list.
         If there are no archived tasks, shows an information message box.
@@ -232,7 +279,7 @@ class TaskManagerGUI:
 
     def display_selected_task(self, event):
         """
-        Updates the details section of the GUI with the selected task's information and displays buttons for deleting the task, marking it as completed, and displaying archived tasks. If no task is selected, it hides the details section and the buttons.
+        Update the details section of the GUI with the selected task's information and displays buttons for deleting the task, marking it as completed, and displaying archived tasks. If no task is selected, it hides the details section and the buttons.
 
         :param event: The event object that triggered the method, usually a mouse click event.
         :return: None
@@ -265,7 +312,7 @@ class TaskManagerGUI:
 
     def run(self):
         """
-        Starts the GUI event loop and displays the GUI to the user.
+        Start the GUI event loop and displays the GUI to the user.
 
         Example Usage:
         ```python
