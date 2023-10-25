@@ -197,7 +197,7 @@
         <article role="main">
           <h1>Source code for tasks.task</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Task Class - task.py</span>
+<span class="sd">Task Class - task.py.</span>
 
 <span class="sd">This module defines the `Task` class, representing a task in the to-do list application.</span>
 
@@ -231,11 +231,35 @@
 <div class="viewcode-block" id="Task">
 <a class="viewcode-back" href="../../tasks.html#tasks.task.Task">[docs]</a>
 <span class="k">class</span> <span class="nc">Task</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Task Class - task.py.</span>
+
+<span class="sd">    This module defines the `Task` class, representing a task in the to-do list application.</span>
+
+<span class="sd">    The `Task` class includes the following attributes and methods:</span>
+<span class="sd">    - Attributes:</span>
+<span class="sd">      - id (int): A unique identifier for the task.</span>
+<span class="sd">      - name (str): The name of the task.</span>
+<span class="sd">      - description (str): A description of the task.</span>
+<span class="sd">      - completed (bool): A flag indicating whether the task is completed.</span>
+<span class="sd">      - created_date (datetime): The date and time when the task was created.</span>
+
+<span class="sd">    - Methods:</span>
+<span class="sd">      - __init__(self, name, description): Initializes a Task object with the provided name and description. The task is created with a unique ID, and completion status is set to False.</span>
+<span class="sd">      - mark_completed(self): Marks the task as completed by setting the completion status to True.</span>
+<span class="sd">      - __str__(self) -&gt; str: Returns a formatted string representation of the task, including its ID, name, description, completion status, and creation date.</span>
+
+<span class="sd">    Exceptions:</span>
+<span class="sd">    - ValueError: If the name or description is not provided during task initialization.</span>
+
+<span class="sd">    This class is used to represent individual tasks within the to-do list application, allowing users to create, manage, and mark tasks as completed. Each task has a unique identifier (ID) and associated information such as name, description, completion status, and creation date.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
     <span class="n">_id_counter</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initializes a Task object with a unique ID, name, description, completion status (False), and creation date (current datetime).</span>
+<span class="sd">        Initialize a Task object with a unique ID, name, description, completion status (False), and creation date (current datetime).</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): The name of the task.</span>
@@ -244,7 +268,6 @@
 <span class="sd">        Raises:</span>
 <span class="sd">            ValueError: If the name or description is not provided.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
         <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Le nom doit être fourni pour une tâche.&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Le nom doit être fourni pour une tâche.&quot;</span><span class="p">)</span>
@@ -264,9 +287,7 @@
 <div class="viewcode-block" id="Task.mark_completed">
 <a class="viewcode-back" href="../../tasks.html#tasks.task.Task.mark_completed">[docs]</a>
     <span class="k">def</span> <span class="nf">mark_completed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Marks the task as completed by setting the completion status to True.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Mark the task as completed by setting the completion status to True.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">completed</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="n">debug_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;La tâche &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; a été marquée comme terminée.&quot;</span><span class="p">)</span></div>
@@ -274,7 +295,7 @@
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns a string representation of the task, including its ID, name, description, completion status, and creation date.</span>
+<span class="sd">        Return a string representation of the task, including its ID, name, description, completion status, and creation date.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            str: A formatted string representation of the task.</span>

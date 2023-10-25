@@ -197,7 +197,7 @@
         <article role="main">
           <h1>Source code for tasks.main_gui</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Task Manager Application with Graphical User Interface (GUI)</span>
+<span class="sd">Task Manager Application with Graphical User Interface (GUI).</span>
 
 <span class="sd">This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.</span>
 
@@ -236,7 +236,7 @@
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.use_gui">[docs]</a>
 <span class="k">def</span> <span class="nf">use_gui</span><span class="p">(</span><span class="n">task_list</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Creates a graphical user interface (GUI) for a task manager application.</span>
+<span class="sd">    Create a graphical user interface (GUI) for a task manager application.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        task_list (TaskList): An instance of the TaskList class representing a list of tasks.</span>
@@ -264,9 +264,60 @@
 <div class="viewcode-block" id="TaskManagerGUI">
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI">[docs]</a>
 <span class="k">class</span> <span class="nc">TaskManagerGUI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Task Manager Application with Graphical User Interface (GUI).</span>
+
+<span class="sd">    This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.</span>
+
+<span class="sd">    Main Features:</span>
+<span class="sd">    - Add a new task with a name and description.</span>
+<span class="sd">    - View the list of active tasks.</span>
+<span class="sd">    - Delete a task from the list.</span>
+<span class="sd">    - Mark a task as completed.</span>
+<span class="sd">    - View the list of archived tasks.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        root (tk.Tk): The root window of the GUI.</span>
+<span class="sd">        task_list (TaskList): An instance of the TaskList class representing a list of tasks.</span>
+
+<span class="sd">    Example Usage:</span>
+<span class="sd">        task_list = TaskList()</span>
+<span class="sd">        root = tk.Tk()</span>
+<span class="sd">        gui = TaskManagerGUI(root, task_list)</span>
+<span class="sd">        gui.run()</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        root (tk.Tk): The main window of the GUI.</span>
+<span class="sd">        task_list (TaskList): An instance of the TaskList class representing a list of tasks.</span>
+<span class="sd">        task_listbox (tk.Listbox): The widget for displaying the list of tasks.</span>
+<span class="sd">        selected_task: The currently selected task.</span>
+<span class="sd">        input_name (tk.Entry): The input field for task names.</span>
+<span class="sd">        input_description (tk.Entry): The input field for task descriptions.</span>
+<span class="sd">        details_label (tk.Label): The label for displaying task details.</span>
+<span class="sd">        details_text (tk.Text): The widget for displaying task details.</span>
+<span class="sd">        delete_button (tk.Button): The button for deleting the selected task.</span>
+<span class="sd">        complete_button (tk.Button): The button for marking the selected task as completed.</span>
+<span class="sd">        display_archived_button (tk.Button): The button for displaying archived tasks.</span>
+
+<span class="sd">    Methods:</span>
+<span class="sd">        __init__(self, root, task_list): Initialize the GUI.</span>
+<span class="sd">        delete_selected_task(self): Delete the selected task.</span>
+<span class="sd">        complete_selected_task(self): Mark the selected task as completed.</span>
+<span class="sd">        add_task(self): Add a task to the task list.</span>
+<span class="sd">        display_tasks(self): Display the list of tasks.</span>
+<span class="sd">        display_archived_tasks(self): Display the archived tasks.</span>
+<span class="sd">        display_selected_task(self, event): Update the details section with the selected task&#39;s information.</span>
+<span class="sd">        run(self): Start the GUI event loop.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None. It creates a GUI for the task manager application.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="TaskManagerGUI.__init__">
+<a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.__init__">[docs]</a>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">task_list</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initializes the GUI for a task manager application.</span>
+<span class="sd">        Initialize the GUI for a task manager application.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            root (tk.Tk): The root window of the GUI.</span>
@@ -346,19 +397,19 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">display_archived_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
             <span class="n">middle_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Afficher Tâches Archivées&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">display_archived_tasks</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">display_archived_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">display_archived_button</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span></div>
+
 
 <div class="viewcode-block" id="TaskManagerGUI.delete_selected_task">
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.delete_selected_task">[docs]</a>
     <span class="k">def</span> <span class="nf">delete_selected_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Deletes the selected task from the task list.</span>
+<span class="sd">        Delete the selected task from the task list.</span>
 
 <span class="sd">        If there is a selected task, it retrieves the name of the task and removes it from the task list using the `remove_task` method of the `TaskList` class.</span>
 <span class="sd">        It sets `self.selected_task` to None and updates the display of tasks by calling the `display_tasks` method.</span>
 <span class="sd">        It updates the text of the `details_label` to &quot;Détails de la Tâche&quot; and clears the text in the `details_text` widget.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="p">:</span>
             <span class="n">task_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="o">.</span><span class="n">name</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">remove_task</span><span class="p">(</span><span class="n">task_name</span><span class="p">)</span>
@@ -372,13 +423,12 @@
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.complete_selected_task">[docs]</a>
     <span class="k">def</span> <span class="nf">complete_selected_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Marks the selected task as completed.</span>
+<span class="sd">        Mark the selected task as completed.</span>
 
 <span class="sd">        If there is a selected task, it retrieves the name of the task and marks it as completed using the `mark_task_completed` method of the `TaskList` class.</span>
 <span class="sd">        It sets `self.selected_task` to None and updates the display of tasks by calling the `display_tasks` method.</span>
 <span class="sd">        It updates the text of the `details_label` to &quot;Détails de la Tâche&quot; and clears the text in the `details_text` widget.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="p">:</span>
             <span class="n">task_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_task</span><span class="o">.</span><span class="n">name</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">task_list</span><span class="o">.</span><span class="n">mark_task_completed</span><span class="p">(</span><span class="n">task_name</span><span class="p">)</span>
@@ -392,7 +442,7 @@
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.add_task">[docs]</a>
     <span class="k">def</span> <span class="nf">add_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Adds a task to the task list.</span>
+<span class="sd">        Add a task to the task list.</span>
 
 <span class="sd">        Retrieves the name and description of a task from the input fields in the GUI.</span>
 <span class="sd">        Calls the add_task method of the TaskList class to add the task to the task list.</span>
@@ -417,7 +467,7 @@
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.display_tasks">[docs]</a>
     <span class="k">def</span> <span class="nf">display_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Displays the list of tasks.</span>
+<span class="sd">        Display the list of tasks.</span>
 
 <span class="sd">        Clears the task listbox in the GUI.</span>
 <span class="sd">        Iterates over the tasks in the task list and inserts their names into the task listbox.</span>
@@ -432,7 +482,7 @@
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.display_archived_tasks">[docs]</a>
     <span class="k">def</span> <span class="nf">display_archived_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Displays the archived tasks.</span>
+<span class="sd">        Display the archived tasks.</span>
 
 <span class="sd">        Retrieves the archived tasks from the task list.</span>
 <span class="sd">        If there are no archived tasks, shows an information message box.</span>
@@ -452,7 +502,7 @@
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.display_selected_task">[docs]</a>
     <span class="k">def</span> <span class="nf">display_selected_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Updates the details section of the GUI with the selected task&#39;s information and displays buttons for deleting the task, marking it as completed, and displaying archived tasks. If no task is selected, it hides the details section and the buttons.</span>
+<span class="sd">        Update the details section of the GUI with the selected task&#39;s information and displays buttons for deleting the task, marking it as completed, and displaying archived tasks. If no task is selected, it hides the details section and the buttons.</span>
 
 <span class="sd">        :param event: The event object that triggered the method, usually a mouse click event.</span>
 <span class="sd">        :return: None</span>
@@ -488,7 +538,7 @@
 <a class="viewcode-back" href="../../tasks.html#tasks.main_gui.TaskManagerGUI.run">[docs]</a>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Starts the GUI event loop and displays the GUI to the user.</span>
+<span class="sd">        Start the GUI event loop and displays the GUI to the user.</span>
 
 <span class="sd">        Example Usage:</span>
 <span class="sd">        ```python</span>

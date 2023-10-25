@@ -6,6 +6,10 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Informations sur le projet -----------------------------------------------------
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
+
 project = 'Projet-Kit_Bigdata'
 copyright = '2023, Alban Pereira - Yuchen Xia - Aurélien Raulo - Salimatou Traore'
 author = 'Alban Pereira - alban.pereira98@gmail.com & Yuchen Xia - xiayuchen35@gmail.com & Aurélien Raulo - aurelien0raulo@gmail.com & Salimatou Traore - tra.salimatou@gmail.com'
