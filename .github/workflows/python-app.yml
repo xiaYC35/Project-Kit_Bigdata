@@ -53,5 +53,3 @@ jobs:
         cd docs
         pip install furo
         make html
-      run: |
-        twine upload dist/*
