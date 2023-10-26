@@ -1,5 +1,5 @@
 # Environnement de fonctionnement du programme
-FROM python:3.9
+FROM python:3.10
 # Mise en place d'un répertoire de travail à l'intérieur d'un conteneur Docker
 WORKDIR /app
 # Copier le requirements.txt dans le répertoire de travail 
