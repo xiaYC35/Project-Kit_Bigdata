@@ -51,5 +51,4 @@ jobs:
     - name: Generate Docs from Sphinx
       run: |
         cd docs
-        pip install furo
         make html
