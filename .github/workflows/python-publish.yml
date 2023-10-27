@@ -1,17 +1,13 @@
-# This workflow will upload a Python Package using Twine when a release is created
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Upload Python Package to PYPI
+name: Python application
 
 on:
-  release:
-    types:
-      - created
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 permissions:
   contents: read
@@ -22,22 +18,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Set up Python
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
-        python-version: '3.10'
-    
+        python-version: "3.10"
     - name: Install dependencies
-      run: pip install -r requirements.txt
-
+      run: |
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Build package
-      run: python setup.py sdist bdist_wheel
-
+      run: |
+        python setup.py sdist bdist_wheel
     - name: Publish to PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-      run: twine upload dist/*
+      run: |
+        twine upload dist/*
+        pip install furo
+        make html
