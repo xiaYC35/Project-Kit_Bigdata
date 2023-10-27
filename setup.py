@@ -5,7 +5,7 @@ Ce fichier de configuration définit les métadonnées et les informations néce
 
 Informations du Projet:
     - Nom: my_task_manager
-    - Version: 1.0
+    - Version: 1.3
     - Description: Un projet de gestion de liste de tâches (To-do List).
     - Auteurs: Alban Pereira, Yuchen Xia, Aurélien Raulo, Salimatou Traore
     - Emails des Auteurs: alban.pereira98@gmail.com, xiayuchen35@gmail.com, aurelien0raulo@gmail.com, tra.salimatou@gmail.com
@@ -23,7 +23,7 @@ from setuptools import setup, find_packages
 # Les données de projet
 setup(
     name='my_task_manager',
-    version='1.2',
+    version='1.7',
     description='Métadonnées et informations sur la construction de projet To-do List',
     author='Alban Pereira, Yuchen Xia, Aurélien Raulo, Salimatou Traore',
     author_email='alban.pereira98@gmail.com, xiayuchen35@gmail.com, aurelien0raulo@gmail.com, tra.salimatou@gmail.com',
