@@ -69,7 +69,10 @@ jobs:
       run: |
         python setup.py sdist bdist_wheel
     - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: pypi-AgEIcHlwaS5vcmcCJDk4ZTkyOTYxLWExMGEtNGUxNy05YjA3LTc3YjAzZGIyMWM0NwACF1sxLFsibXktdGFzay1tYW5hZ2VyIl1dAAIsWzIsWyI1ZmE3MWZiMi1lOTg1LTRkYjUtYjQzYy04NGMxNDViMWM1YmUiXV0AAAYgzx4Ub6LxXLJ_WDtnYiljEbP1Q2xcLvOLK4MW-ZJ57M8
       run: |
-        twine upload dist/* --username __token__ --password pypi-AgEIcHlwaS5vcmcCJDQwOWI3MzUzLWQyNGMtNGVmMy04ZDc0LWNhZTdmNmI3NDBmNwACKlszLCIzMjFmNzdhZS05YzdiLTQ3NWEtYTk1Mi03MTcxMGQwNDk2ZmUiXQAABiD1vwoLmaNAK40ba6nwHciIWXtxNmvOUppqES8MmfjKLA
+        twine upload dist/*
         pip install furo
         make html
