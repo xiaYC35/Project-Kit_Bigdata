@@ -51,6 +51,8 @@ jobs:
     - name: Generate Docs from Sphinx
       run: |
         cd docs
+        pip install furo
+        make html
 
   deploy:
 
@@ -65,6 +67,10 @@ jobs:
     - name: Install dependencies
       run: |
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Remove old distribution files
+      run: |
+        rm -rf dist/*
+      if: success()  
     - name: Build package
       run: |
         python setup.py sdist bdist_wheel
@@ -74,5 +80,3 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: |
         twine upload dist/*
-        pip install furo
-        make html
