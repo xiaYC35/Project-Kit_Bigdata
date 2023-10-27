@@ -26,14 +26,16 @@ jobs:
     - name: Install dependencies
       run: |
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Remove old distribution files
+      run: |
+        rm -rf dist/*
+      if: success()  
     - name: Build package
       run: |
         python setup.py sdist bdist_wheel
     - name: Publish to PyPI
       env:
-        TWINE_USERNAME: __token__
+        TWINE_USERNAME: _token_
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: |
         twine upload dist/*
-        pip install furo
-        make html
