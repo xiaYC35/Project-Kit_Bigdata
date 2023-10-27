@@ -71,7 +71,7 @@ jobs:
     - name: Publish to PyPI
       env:
         TWINE_USERNAME: __token__
-        TWINE_PASSWORD: pypi-AgEIcHlwaS5vcmcCJGIwNmI5ODA4LWIyYzQtNDE0ZS04ZTI5LTZlMTUwZDI2ZTRjNgACF1sxLFsibXktdGFzay1tYW5hZ2VyIl1dAAIsWzIsWyI1ZmE3MWZiMi1lOTg1LTRkYjUtYjQzYy04NGMxNDViMWM1YmUiXV0AAAYgefnIyHPnVJaEgOwH92mrsQuqa66tQ_9_WeFrTTurNxs
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: |
         twine upload dist/*
         pip install furo
