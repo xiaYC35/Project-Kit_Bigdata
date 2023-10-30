@@ -61,7 +61,8 @@ def main():
             print("Liste des tâches archivées :")
             task_list.display_archived_tasks()
         elif choice == "6":
-            use_gui_cli(task_list)  # Appeler la fonction pour lancer l'interface graphique
+            # Appeler la fonction pour lancer l'interface graphique
+            use_gui_cli(task_list)
         elif choice == "7":
             break
         else:
