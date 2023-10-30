@@ -115,7 +115,6 @@ class TaskManagerGUI:
         None. It creates a GUI for the task manager application.
     """
     
-    
     def __init__(self, root, task_list):
         """
         Initialize the GUI for a task manager application.
@@ -296,6 +295,8 @@ class TaskManagerGUI:
 
     def display_selected_task(self, event):
         """
+        Display selected task details.
+
         Update the details section of the GUI with the selected task's information
         and displays buttons for deleting the task, marking it as completed, and displaying archived tasks.
         If no task is selected, it hides the details section and the buttons.
