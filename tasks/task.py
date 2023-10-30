@@ -68,7 +68,7 @@ class Task:
     def __init__(self, name, description):
         """
         Initialize a Task object.
-        
+
         With a unique ID, name, description, completion status (False), and creation date (current datetime).
 
         Args:
@@ -109,4 +109,4 @@ class Task:
         """
         status = "Terminée" if self.completed else "Non terminée"
         return f"ID : {self.id}\nTâche : {self.name}\nDescription : {self.description}\nStatut : {status}\n" \
-          f"Date de création : {self.created_date}\n"
+        f"Date de création : {self.created_date}\n"
