@@ -7,10 +7,12 @@ The main function initializes the task list, displays a menu for user interactio
 
 
 from .tasklist import TaskList
+from .main_gui import use_gui
 from logs import configure_logging
 
-from .main_gui import use_gui, TaskManagerGUI
+
 configure_logging()
+
 
 def display_menu():
     """Display the main menu options for the task management application."""
@@ -65,10 +67,10 @@ def main():
         else:
             print("Choix non valide. Veuillez entrer un numéro valide.")
 
+
 def use_gui_cli(task_list):
     """Start the Graphical User Interface (GUI) for the task management application from the command line."""
     use_gui(task_list)
-
 
 
 if __name__ == "__main__":

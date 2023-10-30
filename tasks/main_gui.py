@@ -1,7 +1,9 @@
 """
 Task Manager Application with Graphical User Interface (GUI).
 
-This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.
+This application provides a graphical user interface (GUI) for managing
+a list of tasks. Users can add tasks, view tasks, mark tasks as completed,
+and view archived tasks using the provided GUI.
 
 Main Features:
 - Add a new task with a name and description.
@@ -47,8 +49,10 @@ def use_gui(task_list):
 
     Flow:
         1. Creates a Tkinter root window and sets its title.
-        2. Creates an instance of the TaskManagerGUI class, passing the root window and the task_list as arguments.
-        3. Calls the run method of the TaskManagerGUI instance, which starts the GUI event loop and displays the GUI to the user.
+        2. Creates an instance of the TaskManagerGUI class,
+        passing the root window and the task_list as arguments.
+        3. Calls the run method of the TaskManagerGUI instance,
+        which starts the GUI event loop and displays the GUI to the user.
 
     Returns:
         None. It creates a GUI for the task manager application.

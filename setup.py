@@ -1,7 +1,7 @@
 """
 Configuration du Projet - setup.py.
 
-Ce fichier de configuration définit les métadonnées et les informations nécessaires 
+Ce fichier de configuration définit les métadonnées et les informations nécessaires
 à la construction et à l'installation du projet "my_task_manager".
 
 Informations du Projet:
