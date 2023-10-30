@@ -68,7 +68,8 @@ class TaskManagerGUI:
     """
     Task Manager Application with Graphical User Interface (GUI).
 
-    This application provides a graphical user interface (GUI) for managing a list of tasks. Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.
+    This application provides a graphical user interface (GUI) for managing a list of tasks.
+    Users can add tasks, view tasks, mark tasks as completed, and view archived tasks using the provided GUI.
 
     Main Features:
     - Add a new task with a name and description.
