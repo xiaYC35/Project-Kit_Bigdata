@@ -26,6 +26,7 @@ def display_menu():
     print("7. Quitter")
 
 
+# flake8: noqa: C901
 def main():
     """
     Define main function for the task management application.
