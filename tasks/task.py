@@ -107,5 +107,5 @@ class Task:
             str: A formatted string representation of the task.
         """
         status = "Terminée" if self.completed else "Non terminée"
-        return f"ID : {self.id}\nTâche : {self.name}\nDescription : {self.description}\n\
-          Statut : {status}\nDate de création : {self.created_date}\n"
+        return f"ID : {self.id}\nTâche : {self.name}\nDescription : {self.description}\nStatut : {status}\n" \
+          f"Date de création : {self.created_date}\n"
