@@ -109,4 +109,4 @@ class Task:
         """
         status = "Terminée" if self.completed else "Non terminée"
         return f"ID : {self.id}\nTâche : {self.name}\nDescription : {self.description}\nStatut : {status}\n" \
-              f"Date de création : {self.created_date}\n"
+            f"Date de création : {self.created_date}\n"
