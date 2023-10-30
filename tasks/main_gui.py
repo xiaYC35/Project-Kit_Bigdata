@@ -114,7 +114,7 @@ class TaskManagerGUI:
     Returns:
         None. It creates a GUI for the task manager application.
     """
-    
+
     def __init__(self, root, task_list):
         """
         Initialize the GUI for a task manager application.
