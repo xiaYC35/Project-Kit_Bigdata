@@ -5,35 +5,34 @@ name: Python application
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
- 
+
 jobs:
   deploy:
- 
     runs-on: ubuntu-latest
- 
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Remove old distribution files
-      run: |
-        rm -rf dist/*
-      if: success()  
-    - name: Build package
-      run: |
-        python setup.py sdist bdist_wheel
-    - name: Publish to PyPI
-      env:
-        TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-      run: |
-        twine upload dist/*
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Remove old distribution files
+        run: |
+          rm -rf dist/*
+        if: success()
+      - name: Build package
+        run: |
+          python setup.py sdist bdist_wheel
+      - name: Publish to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          twine upload dist/*
