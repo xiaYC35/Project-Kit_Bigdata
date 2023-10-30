@@ -1,7 +1,8 @@
 """
 Test Suite for TaskList Class
 
-This test suite contains test cases for the TaskList class, which is responsible for managing a list of tasks. The test cases cover various aspects of task management and verification of expected behaviors.
+This test suite contains test cases for the TaskList class, which is responsible for managing a list of tasks.
+The test cases cover various aspects of task management and verification of expected behaviors.
 
 Test Cases:
     - test_add_task_adds_new_task_to_tasks_list(): Verifies the addition of a new task to the tasks list.
