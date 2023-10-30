@@ -67,8 +67,8 @@ class Task:
 
     def __init__(self, name, description):
         """
-        Initialize a Task object with a unique ID, name, description, completion status (False),
-        and creation date (current datetime).
+        Initialize a Task object.
+        With a unique ID, name, description, completion status (False), and creation date (current datetime).
 
         Args:
             name (str): The name of the task.
